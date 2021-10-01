@@ -1,0 +1,8 @@
+export.cfg
+.fscache
+.swp
+/builds
+/.godot
+*.import
+*.translation
+export_presets.cfg
