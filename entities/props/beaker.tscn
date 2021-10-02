@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://djxqho1x43eeu"]
+
+[ext_resource type="PackedScene" uid="uid://cu5uqyv2hieco" path="res://entities/props/beaker.glb" id="1_wc3dc"]
+[ext_resource type="Script" path="res://entities/props/beaker.gd" id="2_u8rf5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k61sx"]
+size = Vector3(1, 1.5, 1)
+
+[node name="beaker" instance=ExtResource( "1_wc3dc" )]
+script = ExtResource( "2_u8rf5" )
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+collision_layer = 2
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.227071, 0)
+shape = SubResource( "BoxShape3D_k61sx" )
+script = null

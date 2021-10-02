@@ -1,7 +1,7 @@
 extends Node3D
 
 var _start_y = 0
-var opening = true
+var opening = false
 
 func _ready() -> void:
 	_start_y = position.y

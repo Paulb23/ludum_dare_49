@@ -30,9 +30,6 @@ Traped in a abandoned Mines which are now unstable.
 		- Ones all key are collected raced for the exit
 
 		TODO:
-			- bare bones 3d models
-			- puzzle 2,3 and 4
-			- Level design
 			- Sfx
 			- Music
 			- Menus

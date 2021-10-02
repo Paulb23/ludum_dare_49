@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://drp63g7v6mxae"]
+[gd_scene load_steps=106 format=3 uid="uid://drp63g7v6mxae"]
 
 [ext_resource type="PackedScene" uid="uid://30flow0l12ma" path="res://level/level_base.glb" id="1_oiedd"]
 [ext_resource type="Material" uid="uid://gstqeep6o2a3" path="res://stone_material.tres" id="2_23jms"]
@@ -306,9 +306,15 @@ points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_og00u"]
 points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mnac0"]
+points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xtncq"]
+size = Vector3(0.358, 80, 0.02)
+
 [node name="level_base" instance=ExtResource( "1_oiedd" )]
 
-[node name="Cylinder" parent="." index="0"]
+[node name="Cube136" parent="." index="0"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
@@ -819,414 +825,585 @@ transform = Transform3D(0.428547, 0, -0.204427, 0, 1.5, 0, 0.244387, 0, 0.358474
 shape = SubResource( "ConvexPolygonShape3D_og00u" )
 script = null
 
-[node name="Cylinder001" parent="." index="2"]
+[node name="CollisionShape3D102" type="CollisionShape3D" parent="StaticBody3D" index="101"]
+transform = Transform3D(0.157658, 0, -0.0854021, 0, 10, 0, 0.093568, 0, 0.143899, -1.03477, -9.0495, -0.553917)
+shape = SubResource( "ConvexPolygonShape3D_mnac0" )
+script = null
+
+[node name="CollisionShape3D103" type="CollisionShape3D" parent="StaticBody3D" index="102"]
+transform = Transform3D(0.936428, 0, -0.350861, 0, 1, 0, 0.350861, 0, 0.936428, -0.982308, 32.9116, -0.679773)
+shape = SubResource( "BoxShape3D_xtncq" )
+script = null
+
+[node name="CollisionShape3D104" type="CollisionShape3D" parent="StaticBody3D" index="103"]
+transform = Transform3D(0.837995, 0, -0.545678, 0, 1, 0, 0.545678, 0, 0.837995, -1.08965, 32.9116, -0.437295)
+shape = SubResource( "BoxShape3D_xtncq" )
+script = null
+
+[node name="CollisionShape3D105" type="CollisionShape3D" parent="StaticBody3D" index="104"]
+transform = Transform3D(0.589733, 0, 0.8076, 0, 1, 0, -0.8076, 0, 0.589733, -1.16828, 32.9116, -0.589186)
+shape = SubResource( "BoxShape3D_xtncq" )
+script = null
+
+[node name="Cube137" parent="." index="2"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube138" parent="." index="3"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube139" parent="." index="4"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube140" parent="." index="5"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube141" parent="." index="6"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube142" parent="." index="7"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube143" parent="." index="8"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube144" parent="." index="9"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube145" parent="." index="10"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube146" parent="." index="11"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube147" parent="." index="12"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube148" parent="." index="13"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube149" parent="." index="14"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube150" parent="." index="15"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube151" parent="." index="16"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube152" parent="." index="17"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube153" parent="." index="18"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube154" parent="." index="19"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube155" parent="." index="20"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube156" parent="." index="21"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube157" parent="." index="22"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube158" parent="." index="23"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube159" parent="." index="24"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube160" parent="." index="25"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube161" parent="." index="26"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube162" parent="." index="27"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube163" parent="." index="28"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube164" parent="." index="29"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube165" parent="." index="30"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube166" parent="." index="31"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube167" parent="." index="32"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube168" parent="." index="33"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube169" parent="." index="34"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube170" parent="." index="35"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube171" parent="." index="36"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube172" parent="." index="37"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube173" parent="." index="38"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube174" parent="." index="39"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube175" parent="." index="40"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube176" parent="." index="41"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube177" parent="." index="42"]
+transform = Transform3D(-0.395916, 0, 0.261873, 0, -0.528883, 0, -0.234971, 0, -0.441246, -20.047, 6.34554, -9.3155)
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube178" parent="." index="43"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube179" parent="." index="44"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube180" parent="." index="45"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube181" parent="." index="46"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube182" parent="." index="47"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube183" parent="." index="48"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube184" parent="." index="49"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cube135" parent="Cube184" index="0"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cylinder" parent="." index="50"]
+surface_material_override/0 = ExtResource( "2_23jms" )
+
+[node name="Cylinder001" parent="." index="51"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube" parent="." index="3"]
+[node name="Cube" parent="." index="52"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube001" parent="." index="4"]
+[node name="Cube001" parent="." index="53"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube002" parent="." index="5"]
+[node name="Cube002" parent="." index="54"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube003" parent="." index="6"]
+[node name="Cube003" parent="." index="55"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube004" parent="." index="7"]
+[node name="Cube004" parent="." index="56"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube005" parent="." index="8"]
+[node name="Cube005" parent="." index="57"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube006" parent="." index="9"]
+[node name="Cube006" parent="." index="58"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube007" parent="." index="10"]
+[node name="Cube007" parent="." index="59"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube008" parent="." index="11"]
+[node name="Cube008" parent="." index="60"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube009" parent="." index="12"]
+[node name="Cube009" parent="." index="61"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube010" parent="." index="13"]
+[node name="Cube010" parent="." index="62"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube011" parent="." index="14"]
+[node name="Cube011" parent="." index="63"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube012" parent="." index="15"]
+[node name="Cube012" parent="." index="64"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube013" parent="." index="16"]
+[node name="Cube013" parent="." index="65"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube014" parent="." index="17"]
+[node name="Cube014" parent="." index="66"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube015" parent="." index="18"]
+[node name="Cube015" parent="." index="67"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube016" parent="." index="19"]
+[node name="Cube016" parent="." index="68"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube017" parent="." index="20"]
+[node name="Cube017" parent="." index="69"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cylinder002" parent="." index="21"]
+[node name="Cylinder002" parent="." index="70"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube018" parent="." index="22"]
+[node name="Cube018" parent="." index="71"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube019" parent="." index="23"]
+[node name="Cube019" parent="." index="72"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube020" parent="." index="24"]
+[node name="Cube020" parent="." index="73"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube021" parent="." index="25"]
+[node name="Cube021" parent="." index="74"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube022" parent="." index="26"]
+[node name="Cube022" parent="." index="75"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube023" parent="." index="27"]
+[node name="Cube023" parent="." index="76"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube024" parent="." index="28"]
+[node name="Cube024" parent="." index="77"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube025" parent="." index="29"]
+[node name="Cube025" parent="." index="78"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube026" parent="." index="30"]
+[node name="Cube026" parent="." index="79"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube027" parent="." index="31"]
+[node name="Cube027" parent="." index="80"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube028" parent="." index="32"]
+[node name="Cube028" parent="." index="81"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube029" parent="." index="33"]
+[node name="Cube029" parent="." index="82"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube030" parent="." index="34"]
+[node name="Cube030" parent="." index="83"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube031" parent="." index="35"]
+[node name="Cube031" parent="." index="84"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube032" parent="." index="36"]
+[node name="Cube032" parent="." index="85"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube033" parent="." index="37"]
+[node name="Cube033" parent="." index="86"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube034" parent="." index="38"]
+[node name="Cube034" parent="." index="87"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube035" parent="." index="39"]
+[node name="Cube035" parent="." index="88"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube036" parent="." index="40"]
+[node name="Cube036" parent="." index="89"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube037" parent="." index="41"]
+[node name="Cube037" parent="." index="90"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube038" parent="." index="42"]
+[node name="Cube038" parent="." index="91"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube039" parent="." index="43"]
+[node name="Cube039" parent="." index="92"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube040" parent="." index="44"]
+[node name="Cube040" parent="." index="93"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube041" parent="." index="45"]
+[node name="Cube041" parent="." index="94"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube042" parent="." index="46"]
+[node name="Cube042" parent="." index="95"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube043" parent="." index="47"]
+[node name="Cube043" parent="." index="96"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube044" parent="." index="48"]
+[node name="Cube044" parent="." index="97"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube045" parent="." index="49"]
+[node name="Cube045" parent="." index="98"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube046" parent="." index="50"]
+[node name="Cube046" parent="." index="99"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube047" parent="." index="51"]
+[node name="Cube047" parent="." index="100"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube048" parent="." index="52"]
+[node name="Cube048" parent="." index="101"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube049" parent="." index="53"]
+[node name="Cube049" parent="." index="102"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube050" parent="." index="54"]
+[node name="Cube050" parent="." index="103"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube051" parent="." index="55"]
+[node name="Cube051" parent="." index="104"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube052" parent="." index="56"]
+[node name="Cube052" parent="." index="105"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube053" parent="." index="57"]
+[node name="Cube053" parent="." index="106"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube054" parent="." index="58"]
+[node name="Cube054" parent="." index="107"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube055" parent="." index="59"]
+[node name="Cube055" parent="." index="108"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube056" parent="." index="60"]
+[node name="Cube056" parent="." index="109"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube057" parent="." index="61"]
+[node name="Cube057" parent="." index="110"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube058" parent="." index="62"]
+[node name="Cube058" parent="." index="111"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube059" parent="." index="63"]
+[node name="Cube059" parent="." index="112"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube060" parent="." index="64"]
+[node name="Cube060" parent="." index="113"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube061" parent="." index="65"]
+[node name="Cube061" parent="." index="114"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube104" parent="." index="66"]
+[node name="Cube104" parent="." index="115"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube105" parent="." index="67"]
+[node name="Cube105" parent="." index="116"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube106" parent="." index="68"]
+[node name="Cube106" parent="." index="117"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube107" parent="." index="69"]
+[node name="Cube107" parent="." index="118"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube108" parent="." index="70"]
+[node name="Cube108" parent="." index="119"]
 transform = Transform3D(0, 0, 13.52, 0, 10.48, 0, -0.5, 0, 0, -25.2699, -0.71537, 61.1189)
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube109" parent="." index="71"]
+[node name="Cube109" parent="." index="120"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube110" parent="." index="72"]
+[node name="Cube110" parent="." index="121"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube111" parent="." index="73"]
+[node name="Cube111" parent="." index="122"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube112" parent="." index="74"]
+[node name="Cube112" parent="." index="123"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube113" parent="." index="75"]
+[node name="Cube113" parent="." index="124"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube114" parent="." index="76"]
+[node name="Cube114" parent="." index="125"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube115" parent="." index="77"]
+[node name="Cube115" parent="." index="126"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube116" parent="." index="78"]
+[node name="Cube116" parent="." index="127"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube117" parent="." index="79"]
+[node name="Cube117" parent="." index="128"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube118" parent="." index="80"]
+[node name="Cube118" parent="." index="129"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube119" parent="." index="81"]
+[node name="Cube119" parent="." index="130"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube120" parent="." index="82"]
+[node name="Cube120" parent="." index="131"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube121" parent="." index="83"]
+[node name="Cube121" parent="." index="132"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube122" parent="." index="84"]
+[node name="Cube122" parent="." index="133"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube123" parent="." index="85"]
+[node name="Cube123" parent="." index="134"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube124" parent="." index="86"]
+[node name="Cube124" parent="." index="135"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube125" parent="." index="87"]
+[node name="Cube125" parent="." index="136"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube062" parent="." index="88"]
+[node name="Cube062" parent="." index="137"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube063" parent="." index="89"]
+[node name="Cube063" parent="." index="138"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube064" parent="." index="90"]
+[node name="Cube064" parent="." index="139"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube065" parent="." index="91"]
+[node name="Cube065" parent="." index="140"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube066" parent="." index="92"]
+[node name="Cube066" parent="." index="141"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube067" parent="." index="93"]
+[node name="Cube067" parent="." index="142"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube068" parent="." index="94"]
+[node name="Cube068" parent="." index="143"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube069" parent="." index="95"]
+[node name="Cube069" parent="." index="144"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube070" parent="." index="96"]
+[node name="Cube070" parent="." index="145"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube071" parent="." index="97"]
+[node name="Cube071" parent="." index="146"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube072" parent="." index="98"]
+[node name="Cube072" parent="." index="147"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube073" parent="." index="99"]
+[node name="Cube073" parent="." index="148"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube074" parent="." index="100"]
+[node name="Cube074" parent="." index="149"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube075" parent="." index="101"]
+[node name="Cube075" parent="." index="150"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube076" parent="." index="102"]
+[node name="Cube076" parent="." index="151"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube077" parent="." index="103"]
+[node name="Cube077" parent="." index="152"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube078" parent="." index="104"]
+[node name="Cube078" parent="." index="153"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube079" parent="." index="105"]
+[node name="Cube079" parent="." index="154"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube080" parent="." index="106"]
+[node name="Cube080" parent="." index="155"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube081" parent="." index="107"]
+[node name="Cube081" parent="." index="156"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube082" parent="." index="108"]
+[node name="Cube082" parent="." index="157"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube083" parent="." index="109"]
+[node name="Cube083" parent="." index="158"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube084" parent="." index="110"]
+[node name="Cube084" parent="." index="159"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube085" parent="." index="111"]
+[node name="Cube085" parent="." index="160"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube086" parent="." index="112"]
+[node name="Cube086" parent="." index="161"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube087" parent="." index="113"]
+[node name="Cube087" parent="." index="162"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube088" parent="." index="114"]
+[node name="Cube088" parent="." index="163"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube089" parent="." index="115"]
+[node name="Cube089" parent="." index="164"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube090" parent="." index="116"]
+[node name="Cube090" parent="." index="165"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube091" parent="." index="117"]
+[node name="Cube091" parent="." index="166"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube092" parent="." index="118"]
+[node name="Cube092" parent="." index="167"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube093" parent="." index="119"]
+[node name="Cube093" parent="." index="168"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube094" parent="." index="120"]
+[node name="Cube094" parent="." index="169"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube095" parent="." index="121"]
+[node name="Cube095" parent="." index="170"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube096" parent="." index="122"]
+[node name="Cube096" parent="." index="171"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube097" parent="." index="123"]
+[node name="Cube097" parent="." index="172"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube098" parent="." index="124"]
+[node name="Cube098" parent="." index="173"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube099" parent="." index="125"]
+[node name="Cube099" parent="." index="174"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube100" parent="." index="126"]
+[node name="Cube100" parent="." index="175"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube101" parent="." index="127"]
+[node name="Cube101" parent="." index="176"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube102" parent="." index="128"]
+[node name="Cube102" parent="." index="177"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube103" parent="." index="129"]
+[node name="Cube103" parent="." index="178"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube126" parent="." index="130"]
+[node name="Cube126" parent="." index="179"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube127" parent="." index="131"]
+[node name="Cube127" parent="." index="180"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube128" parent="." index="132"]
+[node name="Cube128" parent="." index="181"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube129" parent="." index="133"]
+[node name="Cube129" parent="." index="182"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube130" parent="." index="134"]
+[node name="Cube130" parent="." index="183"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube131" parent="." index="135"]
+[node name="Cube131" parent="." index="184"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube132" parent="." index="136"]
+[node name="Cube132" parent="." index="185"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube133" parent="." index="137"]
+[node name="Cube133" parent="." index="186"]
 surface_material_override/0 = ExtResource( "2_23jms" )
 
-[node name="Cube134" parent="." index="138"]
+[node name="Cube134" parent="." index="187"]
 surface_material_override/0 = ExtResource( "2_23jms" )

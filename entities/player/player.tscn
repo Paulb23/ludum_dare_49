@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgm8cbwopc0md"]
+[gd_scene load_steps=6 format=3 uid="uid://bgm8cbwopc0md"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_ig6fk"]
 [ext_resource type="Texture2D" uid="uid://dbtnfqqpl5gwk" path="res://ui/blue_key.png" id="2_32umw"]
+[ext_resource type="PackedScene" uid="uid://djxqho1x43eeu" path="res://entities/props/beaker.tscn" id="2_hesrv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dwamd"]
 
@@ -37,6 +38,10 @@ script = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.67931)
 script = null
 
+[node name="beaker" parent="head/hand" instance=ExtResource( "2_hesrv" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32651, 0, 0)
+visible = false
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -47,6 +52,58 @@ offset_top = -13.0
 offset_right = 57.0
 offset_bottom = 13.0
 text = "Click to interact.
+"
+structured_text_bidi_override_options = []
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="drop" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -13.0
+offset_right = 57.0
+offset_bottom = 13.0
+text = "Right click to drop.
+"
+structured_text_bidi_override_options = []
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pickup" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -13.0
+offset_right = 57.0
+offset_bottom = 13.0
+text = "Click to pick up.
+"
+structured_text_bidi_override_options = []
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="main" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -13.0
+offset_right = 57.0
+offset_bottom = 13.0
+text = "Left click to fill.
+Right click to drain.
 "
 structured_text_bidi_override_options = []
 script = null

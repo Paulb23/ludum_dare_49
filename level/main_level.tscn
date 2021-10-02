@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bu265qr4qyl8r"]
+[gd_scene load_steps=31 format=3 uid="uid://bu265qr4qyl8r"]
 
 [ext_resource type="Script" path="res://level/main_level.gd" id="1_0kgm6"]
 [ext_resource type="PackedScene" uid="uid://bgm8cbwopc0md" path="res://entities/player/player.tscn" id="1_kc60k"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ut2c4y7y0pvp" path="res://entities/gates/small_gate.tscn" id="8_12jnd"]
 [ext_resource type="Script" path="res://level/pressure_plate.gd" id="9_wjrcd"]
 [ext_resource type="PackedScene" uid="uid://i5xt75ltcdf3" path="res://entities/intractable.tscn" id="10_jvrbw"]
+[ext_resource type="PackedScene" uid="uid://bt2r23tynk8s3" path="res://entities/props/table.tscn" id="11_bvfpe"]
+[ext_resource type="PackedScene" uid="uid://djxqho1x43eeu" path="res://entities/props/beaker.tscn" id="12_1ef8p"]
+[ext_resource type="PackedScene" uid="uid://cr8vnxx15fgpx" path="res://entities/props/padlock.tscn" id="13_jp3mc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8mdpy"]
 sky_top_color = Color(0.568627, 0.698039, 0.807843, 1)
@@ -26,7 +29,6 @@ sky = SubResource( "Sky_hqgbp" )
 tonemap_mode = 2
 auto_exposure_enabled = true
 ssao_enabled = true
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
 volumetric_fog_enabled = true
@@ -48,6 +50,30 @@ size = Vector3(2, 0.5, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_80068"]
 size = Vector3(2, 4, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmriv"]
+size = Vector3(15, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nin6e"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0k4vj"]
+data = PackedVector3Array(-7.5, 0.5, 15, 7.5, 0.5, 15, -7.5, -0.5, 15, 7.5, 0.5, 15, 7.5, -0.5, 15, -7.5, -0.5, 15, 7.5, 0.5, -15, -7.5, 0.5, -15, 7.5, -0.5, -15, -7.5, 0.5, -15, -7.5, -0.5, -15, 7.5, -0.5, -15, 7.5, 0.5, 15, 7.5, 0.5, -15, 7.5, -0.5, 15, 7.5, 0.5, -15, 7.5, -0.5, -15, 7.5, -0.5, 15, -7.5, 0.5, -15, -7.5, 0.5, 15, -7.5, -0.5, -15, -7.5, 0.5, 15, -7.5, -0.5, 15, -7.5, -0.5, -15, 7.5, 0.5, 15, -7.5, 0.5, 15, 7.5, 0.5, -15, -7.5, 0.5, 15, -7.5, 0.5, -15, 7.5, 0.5, -15, -7.5, -0.5, 15, 7.5, -0.5, 15, -7.5, -0.5, -15, 7.5, -0.5, 15, 7.5, -0.5, -15, -7.5, -0.5, -15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fd2l5"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btiae"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrlfc"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl4pa"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_okdxs"]
+size = Vector3(20, 20, 0.2)
 
 [node name="main_level" type="Node3D"]
 script = ExtResource( "1_0kgm6" )
@@ -247,6 +273,9 @@ script = null
 [node name="torch" parent="lights" instance=ExtResource( "4_ddr6v" )]
 transform = Transform3D(0.322282, 0, -0.946644, 0, 1, 0, 0.946644, 0, 0.322282, 11.2072, 4.00477, 4.06579)
 
+[node name="torch36" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-0.178582, 0.207695, -0.961754, 0.0243076, 0.9781, 0.206711, 0.983625, 0.013537, -0.17972, 5.68827, 4.00477, -7.40506)
+
 [node name="torch21" parent="lights" instance=ExtResource( "4_ddr6v" )]
 transform = Transform3D(-0.847632, 0, -0.530585, 0, 1, 0, 0.530585, 0, -0.847632, 6.27185, 4.05139, 7.00971)
 
@@ -353,9 +382,18 @@ transform = Transform3D(-0.994005, 0, -0.109335, 0, 1, 0, 0.109335, 0, -0.994005
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.419554, 59.1185)
 key_colour = 1
 
+[node name="purple_key_box" parent="." instance=ExtResource( "5_a8yp8" )]
+transform = Transform3D(0.513691, 0, 0.857975, 0, 1, 0, -0.857975, 0, 0.513691, 8.8418, 0.408172, -8.99496)
+key_colour = 2
+
 [node name="yellow_key_box" parent="." instance=ExtResource( "5_a8yp8" )]
 transform = Transform3D(-0.301272, 0, -0.953538, 0, 1, 0, 0.953538, 0, -0.301272, 66.9276, 0.266512, -9.6686)
 key_colour = 3
+
+[node name="red_key_box" parent="." instance=ExtResource( "5_a8yp8" )]
+transform = Transform3D(-0.534323, 0, -0.84528, 0, 1, 0, 0.84528, 0, -0.534323, 55.2736, 1.56528, 30.7207)
+visible = false
+key_colour = 4
 
 [node name="player_death_boxes" type="Node3D" parent="."]
 script = null
@@ -373,9 +411,18 @@ script = null
 transform = Transform3D(0.0121117, 0.00864115, 0.999889, 0.0140962, 0.999862, -0.00881166, -0.999827, 0.0142014, 0.0119882, 0.356962, 0.609049, 58.9284)
 key_colour = 1
 
+[node name="purple_key" parent="." groups=["level_4_key"] instance=ExtResource( "7_m1tbb" )]
+transform = Transform3D(0.851605, -0.0166233, -0.523919, 0.0140962, 0.999862, -0.00881166, 0.523994, 0.00011876, 0.851722, 8.82152, 0.597667, -8.59109)
+key_colour = 2
+
 [node name="yellow_key" parent="." groups=["level_2_key"] instance=ExtResource( "7_m1tbb" )]
 transform = Transform3D(-0.949724, 0.0161449, 0.312669, 0.0140962, 0.999862, -0.00881166, -0.312769, -0.00396119, -0.949821, 66.8539, 0.456007, -10.0662)
 key_colour = 3
+
+[node name="red_key" parent="." groups=["level_3_key"] instance=ExtResource( "7_m1tbb" )]
+transform = Transform3D(-0.838662, 0.0166213, 0.544396, 0.0140962, 0.999862, -0.00881166, -0.544469, 0.000283935, -0.838781, 55.3037, 1.75478, 30.3175)
+visible = false
+key_colour = 4
 
 [node name="level_2_gate" parent="." instance=ExtResource( "8_12jnd" )]
 transform = Transform3D(-0.473489, 0, -0.8808, 0, 1, 0, 0.8808, 0, -0.473489, 11.3354, 4.86765, -5.67525)
@@ -436,6 +483,147 @@ shape = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.1774, 1.50914, -5.24177)
 shape = 5
 
+[node name="level_4" type="Node3D" parent="."]
+script = null
+
+[node name="table" parent="level_4" instance=ExtResource( "11_bvfpe" )]
+transform = Transform3D(0.529416, 0, 0.848362, 0, 1, 0, -0.848362, 0, 0.529416, 55.1965, 0.378348, 30.6193)
+
+[node name="table2" parent="level_4" instance=ExtResource( "11_bvfpe" )]
+transform = Transform3D(0.879582, 0, -0.475747, 0, 1, 0, 0.475747, 0, 0.879582, 47.5953, 0.378348, 32.0151)
+
+[node name="table3" parent="level_4" instance=ExtResource( "11_bvfpe" )]
+transform = Transform3D(0.879582, 0, -0.475747, 0, 1, 0, 0.475747, 0, 0.879582, 42.0393, 0.378348, 28.9307)
+
+[node name="table4" parent="level_4" instance=ExtResource( "11_bvfpe" )]
+transform = Transform3D(0.879582, 0, -0.475747, 0, 1, 0, 0.475747, 0, 0.879582, 48.2618, 0.378348, 21.3879)
+
+[node name="table5" parent="level_4" instance=ExtResource( "11_bvfpe" )]
+transform = Transform3D(0.879582, 0, -0.475747, 0, 1, 0, 0.475747, 0, 0.879582, 53.8874, 0.378348, 24.7163)
+
+[node name="beakers" type="Node3D" parent="level_4"]
+transform = Transform3D(0.879582, 0, -0.475747, 0, 1, 0, 0.475747, 0, 0.879582, 53.8874, 0.378348, 24.7163)
+script = null
+
+[node name="beaker" parent="level_4/beakers" instance=ExtResource( "12_1ef8p" )]
+transform = Transform3D(0.879582, 0, 0.475747, 0, 1, 0, -0.475747, 0, 0.879582, -7.35962, 1.58518, -0.203644)
+colour = 3
+
+[node name="beaker2" parent="level_4/beakers" instance=ExtResource( "12_1ef8p" )]
+transform = Transform3D(0.879582, 0, 0.475747, 0, 1, 0, -0.475747, 0, 0.879582, -0.0451965, 1.58518, 0.220293)
+colour = 1
+
+[node name="beaker3" parent="level_4/beakers" instance=ExtResource( "12_1ef8p" )]
+transform = Transform3D(0.879582, 0, 0.475747, 0, 1, 0, -0.475747, 0, 0.879582, 4.22917, 1.58518, 4.26612)
+
+[node name="beaker4" parent="level_4/beakers" instance=ExtResource( "12_1ef8p" )]
+transform = Transform3D(0.879582, 0, 0.475747, 0, 1, 0, -0.475747, 0, 0.879582, -2.46833, 1.58518, 9.18828)
+colour = 2
+
+[node name="beaker5" parent="level_4/beakers" instance=ExtResource( "12_1ef8p" )]
+transform = Transform3D(0.879582, 0, 0.475747, 0, 1, 0, -0.475747, 0, 0.879582, -8.10696, 1.58518, 9.24721)
+colour = 4
+
+[node name="padlocks" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.0332, 5.21048, -8.04015)
+script = null
+
+[node name="padlock" parent="padlocks" instance=ExtResource( "13_jp3mc" )]
+transform = Transform3D(0.0214808, -0.0751899, 0.996938, 0.999574, -0.0180734, -0.0229008, 0.01974, 0.997005, 0.0747696, -5.38812, -2.8242, -5.44411)
+colour = 1
+
+[node name="padlock2" parent="padlocks" instance=ExtResource( "13_jp3mc" )]
+transform = Transform3D(0.0214808, -0.0751899, 0.996938, 0.999574, -0.0180734, -0.0229008, 0.01974, 0.997005, 0.0747696, -5.38812, -1.39626, -5.44411)
+colour = 2
+
+[node name="padlock3" parent="padlocks" instance=ExtResource( "13_jp3mc" )]
+transform = Transform3D(0.0214808, -0.0751899, 0.996938, 0.999574, -0.0180734, -0.0229008, 0.01974, 0.997005, 0.0747696, 5.7509, -1.39626, -5.44411)
+colour = 3
+
+[node name="padlock4" parent="padlocks" instance=ExtResource( "13_jp3mc" )]
+transform = Transform3D(0.0214808, -0.0751899, 0.996938, 0.999574, -0.0180734, -0.0229008, 0.01974, 0.997005, 0.0747696, 5.7509, -2.59132, -5.44411)
+colour = 4
+
+[node name="endof_level" type="Node3D" parent="."]
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="endof_level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9634, -0.557759, -25.863)
+mesh = SubResource( "BoxMesh_bmriv" )
+surface_material_override/0 = SubResource( "StandardMaterial3D_nin6e" )
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="endof_level/MeshInstance3D"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="endof_level/MeshInstance3D/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_0k4vj" )
+script = null
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="endof_level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9634, 7.30186, -29.3588)
+material_override = SubResource( "StandardMaterial3D_fd2l5" )
+mesh = SubResource( "BoxMesh_bmriv" )
+surface_material_override/0 = null
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="endof_level/MeshInstance3D2"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="endof_level/MeshInstance3D2/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_0k4vj" )
+script = null
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="endof_level"]
+transform = Transform3D(0.0926138, -0.995702, 0, 0.995702, 0.0926138, 0, 0, 0, 1, 18.6358, -0.624954, -28.54)
+mesh = SubResource( "BoxMesh_bmriv" )
+surface_material_override/0 = SubResource( "StandardMaterial3D_btiae" )
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="endof_level/MeshInstance3D3"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="endof_level/MeshInstance3D3/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_0k4vj" )
+script = null
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="endof_level"]
+transform = Transform3D(0.0926138, -0.995702, 0, 0.995702, 0.0926138, 0, 0, 0, 1, 32.7727, -0.624954, -28.54)
+mesh = SubResource( "BoxMesh_bmriv" )
+surface_material_override/0 = SubResource( "StandardMaterial3D_qrlfc" )
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="endof_level/MeshInstance3D4"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="endof_level/MeshInstance3D4/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_0k4vj" )
+script = null
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="endof_level"]
+transform = Transform3D(0.00194764, -0.0209393, 0.999779, 0.995702, 0.0926138, 0, -0.0925933, 0.995482, 0.0210297, 25.2802, -0.535889, -42.4018)
+mesh = SubResource( "BoxMesh_bmriv" )
+surface_material_override/0 = SubResource( "StandardMaterial3D_dl4pa" )
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="endof_level/MeshInstance3D5"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="endof_level/MeshInstance3D5/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_0k4vj" )
+script = null
+
+[node name="Area3D" type="Area3D" parent="endof_level"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="endof_level/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1107, 2.54346, -17.789)
+shape = SubResource( "BoxShape3D_okdxs" )
+script = null
+
+[connection signal="beakers_passed" from="player" to="." method="_on_player_beakers_passed"]
 [connection signal="key_collected" from="player" to="." method="_on_player_key_collected"]
+[connection signal="locks_open" from="player" to="." method="_on_player_locks_open"]
 [connection signal="body_entered" from="player_death_boxes/Area3D" to="." method="_on_Area3D_body_entered"]
 [connection signal="all_placed" from="level_3/pressure_plate" to="player" method="_on_pressure_plate_all_placed"]
+[connection signal="body_entered" from="endof_level/Area3D" to="." method="_on_Area3D_final_body_entered"]

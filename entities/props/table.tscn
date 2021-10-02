@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt2r23tynk8s3"]
+
+[ext_resource type="PackedScene" uid="uid://cnj3y8f1v4id" path="res://entities/props/table.glb" id="1_krpsh"]
+[ext_resource type="Material" uid="uid://dm20e4xer26hs" path="res://base_material.tres" id="2_2vtes"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pbuyp"]
+size = Vector3(3.8, 2.2, 1.7)
+
+[node name="table" instance=ExtResource( "1_krpsh" )]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource( "2_2vtes" )
+
+[node name="Cube001" parent="." index="1"]
+surface_material_override/0 = ExtResource( "2_2vtes" )
+
+[node name="Cube002" parent="." index="2"]
+surface_material_override/0 = ExtResource( "2_2vtes" )
+
+[node name="Cube003" parent="." index="3"]
+surface_material_override/0 = ExtResource( "2_2vtes" )
+
+[node name="Cube004" parent="." index="4"]
+surface_material_override/0 = ExtResource( "2_2vtes" )
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource( "BoxShape3D_pbuyp" )
+script = null
