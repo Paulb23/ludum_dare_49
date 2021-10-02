@@ -1,21 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://i5xt75ltcdf3"]
+[gd_scene load_steps=4 format=3 uid="uid://i5xt75ltcdf3"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_h4y17"]
+[ext_resource type="Script" path="res://entities/intractable.gd" id="1_gi0lg"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_xts4p"]
+[sub_resource type="PrismMesh" id="PrismMesh_fffv4"]
 
-[node name="intractable" type="Node3D"]
-script = null
+[sub_resource type="SphereShape3D" id="SphereShape3D_jplso"]
+
+[node name="intractable" type="RigidDynamicBody3D"]
+collision_layer = 3
+mass = 0.5
+freeze_mode = 1
+script = ExtResource( "1_gi0lg" )
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource( "CylinderMesh_h4y17" )
+mesh = SubResource( "PrismMesh_fffv4" )
 surface_material_override/0 = null
 script = null
 
-[node name="RigidDynamicBody3D" type="RigidDynamicBody3D" parent="."]
-collision_layer = 3
-script = null
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidDynamicBody3D"]
-shape = SubResource( "CylinderShape3D_xts4p" )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource( "SphereShape3D_jplso" )
 script = null

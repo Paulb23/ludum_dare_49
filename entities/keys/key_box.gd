@@ -5,8 +5,7 @@ extends Node3D
 @onready var animation = $AnimationPlayer
 
 func open():
-	if key_colour == 1:
-		animation.play("open")
+	animation.play("open")
 
 func _on_AnimationPlayer_animation_finished(anim_name: StringName) -> void:
 	$keybox.input_ray_pickable = false

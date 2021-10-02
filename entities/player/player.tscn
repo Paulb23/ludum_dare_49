@@ -33,6 +33,10 @@ collision_mask = 2
 collide_with_areas = true
 script = null
 
+[node name="hand" type="Node3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.67931)
+script = null
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5

@@ -20,6 +20,10 @@ var _mouse_delta := Vector2.ZERO
 var _start_postion
 var _start_rot
 
+var _item
+var _has_item = false
+var _can_open_yellow = false
+
 @onready var _ray_cast := $head/RayCast3D
 
 var keys_collected = 0
@@ -67,25 +71,44 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	if _ray_cast.is_colliding():
+	if _has_item:
+		if Input.is_action_just_pressed("interact"):
+			_item.global_transform.origin = $head/hand.global_transform.origin
+			_has_item = false
+			_item.freeze = false
+			return
+		else:
+			_item.global_transform.origin = $head/hand.global_transform.origin
+
+	if not _has_item and _ray_cast.is_colliding():
 		$Label.visible = true
 
 		if Input.is_action_just_pressed("interact"):
-			var col_name = _ray_cast.get_collider().get_name()
-			if keys_collected == 0 && col_name == "keybox":
-				_ray_cast.get_collider().get_parent().open()
+			if String(_ray_cast.get_collider().get_name()).find("intractable") != -1:
+				_item = _ray_cast.get_collider()
+				_has_item = true
+				_item.freeze = true
+				return
+
+			var obj = _ray_cast.get_collider().get_parent()
+			if keys_collected == 0 && obj.get_name() == "blue_key_box":
+				obj.open()
 				get_tree().call_group("level_1_key", "enable")
-			if col_name == "key":
-				_ray_cast.get_collider().get_parent().queue_free()
+			if keys_collected == 1 && _can_open_yellow && obj.get_name() == "yellow_key_box":
+				obj.open()
+				get_tree().call_group("level_2_key", "enable")
+
+			if _ray_cast.get_collider().get_name() == "key":
+				obj.queue_free()
 				keys_collected += 1
 				match keys_collected:
 					1:
 						$items/blue_key.visible = true
-					1:
+					2:
 						$items/purple_key.visible = true
-					1:
+					3:
 						$items/yellow_key.visible = true
-					1:
+					4:
 						$items/red_key.visible = true
 				key_collected.emit()
 
@@ -95,6 +118,7 @@ func _physics_process(delta: float) -> void:
 func respawn():
 	position = _start_postion
 	rotation = _start_rot
+	_has_item = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
@@ -106,3 +130,8 @@ func _input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED && event is InputEventMouseMotion:
 		_mouse_delta = event.relative
 
+func _on_pressure_plate_all_placed() -> void:
+	if _has_item:
+		_can_open_yellow = false
+		return
+	_can_open_yellow = true

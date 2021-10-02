@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ut2c4y7y0pvp"]
+
+[ext_resource type="PackedScene" uid="uid://cnkv2lcoj15q1" path="res://entities/gates/small_gate.glb" id="1_d2l24"]
+[ext_resource type="Material" uid="uid://dm20e4xer26hs" path="res://base_material.tres" id="2_3t6cj"]
+[ext_resource type="Script" path="res://entities/gates/small_gate.gd" id="2_ej0ni"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbbk7"]
+size = Vector3(5, 10, 1)
+
+[node name="small_gate" instance=ExtResource( "1_d2l24" )]
+script = ExtResource( "2_ej0ni" )
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = ExtResource( "2_3t6cj" )
+
+[node name="Cylinder001" parent="." index="1"]
+surface_material_override/0 = ExtResource( "2_3t6cj" )
+
+[node name="Cylinder002" parent="." index="2"]
+surface_material_override/0 = ExtResource( "2_3t6cj" )
+
+[node name="Cylinder003" parent="." index="3"]
+surface_material_override/0 = ExtResource( "2_3t6cj" )
+
+[node name="Cylinder004" parent="." index="4"]
+surface_material_override/0 = ExtResource( "2_3t6cj" )
+
+[node name="Cylinder005" parent="." index="5"]
+surface_material_override/0 = ExtResource( "2_3t6cj" )
+
+[node name="Cylinder006" parent="." index="6"]
+surface_material_override/0 = ExtResource( "2_3t6cj" )
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="7"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3046, 0, 0)
+shape = SubResource( "BoxShape3D_sbbk7" )
+script = null

@@ -8,6 +8,12 @@ var _red = Color("#E6482E")
 @export_enum("none,blue,purple,yellow,red") var key_colour
 
 func _ready() -> void:
+	var mat  = $Cube.get_surface_override_material(0).duplicate()
+	$Cube.set_surface_override_material(0, mat)
+
+	mat  = $Torus.get_surface_override_material(0).duplicate()
+	$Torus.set_surface_override_material(0, mat)
+
 	match key_colour:
 		1:
 			$Cube.get_surface_override_material(0).albedo_color = _blue
