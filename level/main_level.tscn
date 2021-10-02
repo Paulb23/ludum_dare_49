@@ -1,6 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu265qr4qyl8r"]
+[gd_scene load_steps=13 format=3 uid="uid://bu265qr4qyl8r"]
 
+[ext_resource type="Script" path="res://level/main_level.gd" id="1_0kgm6"]
 [ext_resource type="PackedScene" uid="uid://bgm8cbwopc0md" path="res://entities/player/player.tscn" id="1_kc60k"]
+[ext_resource type="PackedScene" uid="uid://c3kfv0kmup3ut" path="res://level/floor_puzzle/unstable_floor.tscn" id="2_8fdva"]
+[ext_resource type="PackedScene" uid="uid://dk6y18dtwimxd" path="res://entities/props/torch.tscn" id="4_ddr6v"]
+[ext_resource type="PackedScene" uid="uid://do5rplgtedn5n" path="res://entities/keys/key_box.tscn" id="5_a8yp8"]
+[ext_resource type="PackedScene" uid="uid://drp63g7v6mxae" path="res://level/level_base.tscn" id="6_8bbsc"]
+[ext_resource type="PackedScene" uid="uid://jnms0bwlocvs" path="res://entities/keys/key.tscn" id="7_m1tbb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8mdpy"]
 sky_top_color = Color(0.568627, 0.698039, 0.807843, 1)
@@ -15,47 +21,300 @@ sky_material = SubResource( "ProceduralSkyMaterial_8mdpy" )
 background_mode = 2
 sky = SubResource( "Sky_hqgbp" )
 tonemap_mode = 2
+auto_exposure_enabled = true
+ss_reflections_enabled = true
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
 glow_enabled = true
+volumetric_fog_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_d3cc8"]
-size = Vector3(200, 2, 200)
+[sub_resource type="CameraEffects" id="CameraEffects_puimg"]
+override_exposure = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sttjx"]
-size = Vector3(200, 2, 200)
-
-[sub_resource type="BoxMesh" id="BoxMesh_uhfun"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_sb8px"]
+size = Vector3(40, 2, 40)
 
 [node name="main_level" type="Node3D"]
-script = null
+script = ExtResource( "1_0kgm6" )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( "Environment_q6ge7" )
+camera_effects = SubResource( "CameraEffects_puimg" )
 script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.0486438, 0.424662, 0.904044, -0.497628, 0.795086, -0.346705, -387.897, 3.17595, 0)
+light_color = Color(0, 0, 0, 1)
 shadow_enabled = true
-directional_shadow_max_distance = 250.0
+editor_only = true
 script = null
+
+[node name="level_base" parent="." instance=ExtResource( "6_8bbsc" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1395, 0, 0)
 
 [node name="player" parent="." instance=ExtResource( "1_kc60k" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.82562, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.0991, 2.19783, 0)
 
-[node name="level" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97976, 0)
-mesh = SubResource( "BoxMesh_d3cc8" )
-surface_material_override/0 = null
+[node name="floor_trap" type="Node3D" parent="."]
 script = null
 
-[node name="StaticBody3D" type="StaticBody3D" parent="level"]
+[node name="unstable_floor" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 24.3982)
+type = 4
+unstable = true
+
+[node name="unstable_floor2" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 24.3982)
+type = 0
+unstable = true
+
+[node name="unstable_floor3" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 24.3982)
+type = 0
+unstable = true
+
+[node name="unstable_floor4" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 24.3982)
+type = 1
+
+[node name="unstable_floor5" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 24.3982)
+type = 0
+unstable = true
+
+[node name="unstable_floor6" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 24.3982)
+type = 0
+unstable = true
+
+[node name="unstable_floor7" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 28.4668)
+type = 0
+unstable = true
+
+[node name="unstable_floor8" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 28.4668)
+type = 0
+unstable = true
+
+[node name="unstable_floor9" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 28.4668)
+type = 0
+unstable = true
+
+[node name="unstable_floor10" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 28.4668)
+type = 2
+
+[node name="unstable_floor11" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 28.4668)
+type = 3
+
+[node name="unstable_floor12" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 28.4668)
+type = 2
+
+[node name="unstable_floor13" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 32.5531)
+type = 0
+unstable = true
+
+[node name="unstable_floor14" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 32.5531)
+type = 0
+unstable = true
+
+[node name="unstable_floor15" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 32.5531)
+type = 0
+unstable = true
+
+[node name="unstable_floor16" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 32.5531)
+type = 0
+unstable = true
+
+[node name="unstable_floor17" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 32.5531)
+type = 0
+unstable = true
+
+[node name="unstable_floor18" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 32.5531)
+type = 3
+
+[node name="unstable_floor19" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 36.6216)
+type = 1
+
+[node name="unstable_floor20" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 36.6216)
+type = 0
+unstable = true
+
+[node name="unstable_floor21" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 36.6216)
+type = 0
+unstable = true
+
+[node name="unstable_floor22" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 36.6216)
+type = 1
+
+[node name="unstable_floor23" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 36.6216)
+type = 2
+
+[node name="unstable_floor24" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 36.6216)
+type = 1
+
+[node name="unstable_floor25" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 40.5198)
+type = 1
+
+[node name="unstable_floor26" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 40.5198)
+type = 3
+
+[node name="unstable_floor27" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 40.5198)
+type = 0
+unstable = true
+
+[node name="unstable_floor28" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 40.5198)
+type = 0
+unstable = true
+
+[node name="unstable_floor29" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 40.5198)
+type = 0
+unstable = true
+
+[node name="unstable_floor30" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 40.5198)
+type = 0
+unstable = true
+
+[node name="unstable_floor31" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 44.5884)
+type = 0
+unstable = true
+
+[node name="unstable_floor32" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 44.5884)
+type = 1
+
+[node name="unstable_floor33" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 44.5884)
+type = 0
+unstable = true
+
+[node name="unstable_floor34" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 44.5884)
+type = 0
+unstable = true
+
+[node name="unstable_floor35" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 44.5884)
+type = 0
+unstable = true
+
+[node name="unstable_floor36" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 44.5884)
+type = 0
+unstable = true
+
+[node name="lights" type="Node3D" parent="."]
 script = null
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level/StaticBody3D"]
-shape = SubResource( "BoxShape3D_sttjx" )
+[node name="torch" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.322282, 0, -0.946644, 0, 1, 0, 0.946644, 0, 0.322282, 11.2072, 4.00477, 4.06579)
+
+[node name="torch21" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-0.847632, 0, -0.530585, 0, 1, 0, 0.530585, 0, -0.847632, 6.27185, 4.05139, 7.00971)
+
+[node name="torch22" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-0.132568, 0, -0.991174, 0, 1, 0, 0.991174, 0, -0.132568, -1.43573, 4.05139, 11.3119)
+
+[node name="torch2" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-0.230508, 0, -0.97307, 0, 1, 0, 0.97307, 0, -0.230508, 10.9459, 4.0137, -3.37201)
+
+[node name="torch13" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-0.78226, 0, -0.622952, 0, 1, 0, 0.622952, 0, -0.78226, 16.352, 4.15973, -11.5401)
+
+[node name="torch14" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-0.727306, 0, 0.686313, 0, 1, 0, -0.686313, 0, -0.727306, 33.5151, 4.2476, -11.9631)
+
+[node name="torch15" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-0.357032, 0, 0.934092, 0, 1, 0, -0.934092, 0, -0.357032, 39.0925, 3.51657, -3.45216)
+
+[node name="torch16" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.137168, 0, 0.990548, 0, 1, 0, -0.990548, 0, 0.137168, 39.3338, 3.51657, 2.1527)
+
+[node name="torch17" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.554844, 0, 0.831954, 0, 1, 0, -0.831954, 0, 0.554844, 34.698, 3.50561, 10.5704)
+
+[node name="torch18" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.927771, 0, 0.37315, 0, 1, 0, -0.37315, 0, 0.927771, 32.2181, 3.50561, 12.5608)
+
+[node name="torch19" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.825862, 0, -0.563872, 0, 1, 0, 0.563872, 0, 0.825862, 18.9062, 3.92548, 12.6532)
+
+[node name="torch20" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.605127, 0, -0.796129, 0, 1, 0, 0.796129, 0, 0.605127, 15.8685, 3.92548, 10.288)
+
+[node name="torch3" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.0522314, 0, -0.998635, 0, 1, 0, 0.998635, 0, 0.0522314, -12.0746, 6.3777, 44.5886)
+
+[node name="torch10" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.0522314, 0, -0.998635, 0, 1, 0, 0.998635, 0, 0.0522314, -12.0746, 6.3777, 57.2741)
+
+[node name="torch11" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.00523597, 0, 0.999986, 0, 1, 0, -0.999986, 0, 0.00523597, 11.8306, 6.3777, 57.2741)
+
+[node name="torch12" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.999411, 0, -0.0343065, 0, 1, 0, 0.0343065, 0, 0.999411, 0.0443497, 6.3777, 60.3154)
+
+[node name="torch4" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.0522314, 0, -0.998635, 0, 1, 0, 0.998635, 0, 0.0522314, -12.0746, 6.3777, 36.7632)
+
+[node name="torch5" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(0.0522314, 0, -0.998635, 0, 1, 0, 0.998635, 0, 0.0522314, -12.0746, 6.3777, 25.7112)
+
+[node name="torch6" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8191, 6.3777, 44.5886)
+
+[node name="torch7" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8191, 6.3777, 36.7632)
+
+[node name="torch8" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.8191, 6.3777, 25.7112)
+
+[node name="torch9" parent="lights" instance=ExtResource( "4_ddr6v" )]
+transform = Transform3D(-0.994005, 0, -0.109335, 0, 1, 0, 0.109335, 0, -0.994005, 2.47631, 5.97605, 17.5812)
+
+[node name="blue_key_box" parent="." instance=ExtResource( "5_a8yp8" )]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.419554, 59.1185)
+key_colour = 1
+
+[node name="player_death_boxes" type="Node3D" parent="."]
 script = null
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5062, 11.4868, 0)
-mesh = SubResource( "BoxMesh_uhfun" )
-surface_material_override/0 = null
+[node name="Area3D" type="Area3D" parent="player_death_boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.42906, 37.4438)
 script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player_death_boxes/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89582, 0, 0)
+shape = SubResource( "BoxShape3D_sb8px" )
+script = null
+
+[node name="key" parent="." groups=["level_1_key"] instance=ExtResource( "7_m1tbb" )]
+transform = Transform3D(0.0121117, 0.00864115, 0.999889, 0.0140962, 0.999862, -0.00881166, -0.999827, 0.0142014, 0.0119882, 0.356962, 0.609049, 58.9284)
+key_colour = 1
+
+[connection signal="key_collected" from="player" to="." method="_on_player_key_collected"]
+[connection signal="body_entered" from="player_death_boxes/Area3D" to="." method="_on_Area3D_body_entered"]

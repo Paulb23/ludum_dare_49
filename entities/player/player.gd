@@ -1,20 +1,32 @@
 extends CharacterBody3D
 
+signal key_collected
+
 const _air_speed := 10
-const _move_speed := 20
-const _run_speed := 30
+const _move_speed := 10
+const _run_speed := 10
 
 var _jump_force := 30
 var _next_is_jump := -1
 var _gravity := 5
 
 @onready var _mouse_pivot := $head
-var _min_look_angle := -40.0
+var _min_look_angle := -50.0
 var _max_look_angle := 75.0
 
 var _mouse_sensitivity := 50
 var _invert_y_axsis := false
 var _mouse_delta := Vector2.ZERO
+var _start_postion
+var _start_rot
+
+@onready var _ray_cast := $head/RayCast3D
+
+var keys_collected = 0
+
+func _ready() -> void:
+	_start_postion = position
+	_start_rot = rotation
 
 func _physics_process(delta: float) -> void:
 
@@ -54,6 +66,25 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+	if _ray_cast.is_colliding():
+		$Label.visible = true
+
+		if Input.is_action_just_pressed("interact"):
+			var col_name = _ray_cast.get_collider().get_name()
+			if keys_collected == 0 && col_name == "keybox":
+				_ray_cast.get_collider().get_parent().open()
+				get_tree().call_group("level_1_key", "enable")
+			if col_name == "key":
+				_ray_cast.get_collider().get_parent().queue_free()
+				keys_collected += 1
+				key_collected.emit()
+	else:
+		$Label.visible = false
+
+func respawn():
+	position = _start_postion
+	rotation = _start_rot
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -61,6 +92,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action("ui_cancel") and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	if event is InputEventMouseMotion:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED && event is InputEventMouseMotion:
 		_mouse_delta = event.relative
 

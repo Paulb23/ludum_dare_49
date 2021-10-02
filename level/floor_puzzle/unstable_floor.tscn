@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3kfv0kmup3ut"]
+
+[ext_resource type="Script" path="res://level/floor_puzzle/unstable_floor.gd" id="1_784bo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tnwu4"]
+size = Vector3(4, 2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vk5bj"]
+size = Vector3(4, 2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ddwd0"]
+size = Vector3(4, 1, 4)
+
+[node name="unstable_floor" type="StaticBody3D" groups=["level_1"]]
+script = ExtResource( "1_784bo" )
+
+[node name="editor_mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource( "BoxMesh_tnwu4" )
+surface_material_override/0 = null
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource( "BoxShape3D_vk5bj" )
+script = null
+
+[node name="area" type="Area3D" parent="."]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911339, 0)
+shape = SubResource( "BoxShape3D_ddwd0" )
+script = null
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

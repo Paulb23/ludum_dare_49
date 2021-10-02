@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk6y18dtwimxd"]
+
+[ext_resource type="PackedScene" uid="uid://bknsbndh6ydyp" path="res://entities/props/torch.glb" id="1_xylyv"]
+[ext_resource type="Material" uid="uid://dm20e4xer26hs" path="res://base_material.tres" id="2_2heyx"]
+
+[node name="torch" instance=ExtResource( "1_xylyv" )]
+
+[node name="Cone" parent="." index="0"]
+surface_material_override/0 = ExtResource( "2_2heyx" )
+
+[node name="Cube" parent="." index="1"]
+surface_material_override/0 = ExtResource( "2_2heyx" )
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0170947, 1.40888, -0.65258)
+light_color = Color(1, 0.803922, 0.27451, 1)
+script = null

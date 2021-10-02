@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://do5rplgtedn5n"]
+
+[ext_resource type="PackedScene" uid="uid://bokubp0wliqwd" path="res://entities/keys/models/key_box.glb" id="1_ve1hv"]
+[ext_resource type="Script" path="res://entities/keys/key_box.gd" id="2_4006c"]
+[ext_resource type="Material" uid="uid://dm20e4xer26hs" path="res://base_material.tres" id="3_pgglt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhkx7"]
+size = Vector3(4, 0.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0etd"]
+size = Vector3(4, 1, 2)
+
+[node name="key_box" instance=ExtResource( "1_ve1hv" )]
+script = ExtResource( "2_4006c" )
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource( "3_pgglt" )
+
+[node name="Cube001" parent="." index="1"]
+surface_material_override/0 = ExtResource( "3_pgglt" )
+
+[node name="AnimationPlayer" parent="." index="2"]
+blend_times = []
+
+[node name="keybox" type="StaticBody3D" parent="." index="3"]
+collision_layer = 2
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="keybox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.044202, 0)
+shape = SubResource( "BoxShape3D_rhkx7" )
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+input_ray_pickable = false
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.182832, 0)
+shape = SubResource( "BoxShape3D_s0etd" )
+script = null
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

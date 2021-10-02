@@ -16,7 +16,7 @@ Traped in a abandoned Mines which are now unstable.
 	- Puzzle game to progress and provent it from collapsing on you.
 		- Has a end goal can add some sort of plot
 		- Collect for keys, each key makes it slightly more unstable
-			- Agility, postion repair and stacking
+			- Agility, postion, repair and stacking
 				- Agility floor tiles are unstable work out the correct path or fall into spikes
 				- postion work out the right combo or explode
 					- Colours
@@ -28,6 +28,15 @@ Traped in a abandoned Mines which are now unstable.
 				- repair keep the machines going to x time
 				- stacking - todo
 		- Ones all key are collected raced for the exit
+
+		TODO:
+			- bare bones 3d models
+			- puzzle 2,3 and 4
+			- Level design
+			- Sfx
+			- Music
+			- Menus
+			- Polish
 
 Unstable Factory assembly lines:
 	- Endless repair game, start of fixing one thing, slowly upgrade to manage multiple things
