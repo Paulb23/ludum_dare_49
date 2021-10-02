@@ -1,3 +1,37 @@
 Ludum dare 49 ideas
 -------------------
 
+Theme: Unstable.
+
+Unstable objects / state e.g potions, machines
+Unstable systems e.g factorio
+Unstable world e.g see-saw, broken ground
+Unstable person e.g insane
+
+Gameplay:
+	- Keep systems from failing / stable / timers? (Jenga, collect x to keep x stable)
+	- Balance (QWOP)
+
+Traped in a abandoned Mines which are now unstable.
+	- Puzzle game to progress and provent it from collapsing on you.
+		- Has a end goal can add some sort of plot
+		- Collect for keys, each key makes it slightly more unstable
+			- Agility, postion repair and stacking
+				- Agility floor tiles are unstable work out the correct path or fall into spikes
+				- postion work out the right combo or explode
+					- Colours
+						- red - red herrin
+						- blue - 1
+						- purple - 2
+						- yellow - 3
+					- Order of key colection.
+				- repair keep the machines going to x time
+				- stacking - todo
+		- Ones all key are collected raced for the exit
+
+Unstable Factory assembly lines:
+	- Endless repair game, start of fixing one thing, slowly upgrade to manage multiple things
+		- Plot twist when you fail at the end, the factory collapses and a timer starts to escape.
+		- reactive
+
+

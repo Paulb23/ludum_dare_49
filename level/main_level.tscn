@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu265qr4qyl8r"]
+
+[ext_resource type="PackedScene" uid="uid://bgm8cbwopc0md" path="res://entities/player/player.tscn" id="1_kc60k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8mdpy"]
+sky_top_color = Color(0.568627, 0.698039, 0.807843, 1)
+sky_horizon_color = Color(0.672549, 0.704902, 0.734314, 1)
+ground_bottom_color = Color(0.121569, 0.121569, 0.129412, 1)
+ground_horizon_color = Color(0.672549, 0.704902, 0.734314, 1)
+
+[sub_resource type="Sky" id="Sky_hqgbp"]
+sky_material = SubResource( "ProceduralSkyMaterial_8mdpy" )
+
+[sub_resource type="Environment" id="Environment_q6ge7"]
+background_mode = 2
+sky = SubResource( "Sky_hqgbp" )
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_d3cc8"]
+size = Vector3(200, 2, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sttjx"]
+size = Vector3(200, 2, 200)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uhfun"]
+
+[node name="main_level" type="Node3D"]
+script = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( "Environment_q6ge7" )
+script = null
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 250.0
+script = null
+
+[node name="player" parent="." instance=ExtResource( "1_kc60k" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.82562, 0)
+
+[node name="level" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97976, 0)
+mesh = SubResource( "BoxMesh_d3cc8" )
+surface_material_override/0 = null
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level"]
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level/StaticBody3D"]
+shape = SubResource( "BoxShape3D_sttjx" )
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5062, 11.4868, 0)
+mesh = SubResource( "BoxMesh_uhfun" )
+surface_material_override/0 = null
+script = null
