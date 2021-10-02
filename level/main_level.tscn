@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bu265qr4qyl8r"]
+[gd_scene load_steps=14 format=3 uid="uid://bu265qr4qyl8r"]
 
 [ext_resource type="Script" path="res://level/main_level.gd" id="1_0kgm6"]
 [ext_resource type="PackedScene" uid="uid://bgm8cbwopc0md" path="res://entities/player/player.tscn" id="1_kc60k"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do5rplgtedn5n" path="res://entities/keys/key_box.tscn" id="5_a8yp8"]
 [ext_resource type="PackedScene" uid="uid://drp63g7v6mxae" path="res://level/level_base.tscn" id="6_8bbsc"]
 [ext_resource type="PackedScene" uid="uid://jnms0bwlocvs" path="res://entities/keys/key.tscn" id="7_m1tbb"]
+[ext_resource type="PackedScene" uid="uid://ut2c4y7y0pvp" path="res://entities/gates/small_gate.tscn" id="8_12jnd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8mdpy"]
 sky_top_color = Color(0.568627, 0.698039, 0.807843, 1)
@@ -22,7 +23,6 @@ background_mode = 2
 sky = SubResource( "Sky_hqgbp" )
 tonemap_mode = 2
 auto_exposure_enabled = true
-ss_reflections_enabled = true
 ssao_enabled = true
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
@@ -312,9 +312,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89582, 0, 0)
 shape = SubResource( "BoxShape3D_sb8px" )
 script = null
 
-[node name="key" parent="." groups=["level_1_key"] instance=ExtResource( "7_m1tbb" )]
+[node name="blue_key" parent="." groups=["level_1_key"] instance=ExtResource( "7_m1tbb" )]
 transform = Transform3D(0.0121117, 0.00864115, 0.999889, 0.0140962, 0.999862, -0.00881166, -0.999827, 0.0142014, 0.0119882, 0.356962, 0.609049, 58.9284)
 key_colour = 1
+
+[node name="level_2_gate" parent="." instance=ExtResource( "8_12jnd" )]
+transform = Transform3D(-0.473489, 0, -0.8808, 0, 1, 0, 0.8808, 0, -0.473489, 11.3354, 4.86765, -5.67525)
+
+[node name="level_3_gate" parent="." instance=ExtResource( "8_12jnd" )]
+transform = Transform3D(-0.552854, 0, 0.833278, 0, 1, 0, -0.833278, 0, -0.552854, 36.0507, 4.86765, -9.80344)
+
+[node name="level_4_gate" parent="." instance=ExtResource( "8_12jnd" )]
+transform = Transform3D(0.487783, 0, 0.872965, 0, 1, 0, -0.872965, 0, 0.487783, 39.4689, 4.86765, 3.85653)
+
+[node name="level_5_gate" parent="." instance=ExtResource( "8_12jnd" )]
+transform = Transform3D(-0.999893, 0, -0.0146253, 0, 1, 0, 0.0146253, 0, -0.999893, 20.5251, 4.86765, -13.8381)
+
+[node name="level_5_gate2" parent="." instance=ExtResource( "8_12jnd" )]
+transform = Transform3D(-0.999893, 0, -0.0146253, 0, 1, 0, 0.0146253, 0, -0.999893, 25.5045, 4.86765, -13.8381)
 
 [connection signal="key_collected" from="player" to="." method="_on_player_key_collected"]
 [connection signal="body_entered" from="player_death_boxes/Area3D" to="." method="_on_Area3D_body_entered"]

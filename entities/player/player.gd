@@ -27,6 +27,7 @@ var keys_collected = 0
 func _ready() -> void:
 	_start_postion = position
 	_start_rot = rotation
+	$head/camera.current = true
 
 func _physics_process(delta: float) -> void:
 
@@ -77,7 +78,17 @@ func _physics_process(delta: float) -> void:
 			if col_name == "key":
 				_ray_cast.get_collider().get_parent().queue_free()
 				keys_collected += 1
+				match keys_collected:
+					1:
+						$items/blue_key.visible = true
+					1:
+						$items/purple_key.visible = true
+					1:
+						$items/yellow_key.visible = true
+					1:
+						$items/red_key.visible = true
 				key_collected.emit()
+
 	else:
 		$Label.visible = false
 

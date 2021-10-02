@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgm8cbwopc0md"]
+[gd_scene load_steps=5 format=3 uid="uid://bgm8cbwopc0md"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_ig6fk"]
+[ext_resource type="Texture2D" uid="uid://dbtnfqqpl5gwk" path="res://ui/blue_key.png" id="2_32umw"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dwamd"]
 
@@ -48,3 +49,49 @@ script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="items" type="VBoxContainer" parent="."]
+anchor_left = 0.01
+anchor_top = 0.5
+anchor_right = 0.1
+anchor_bottom = 0.5
+offset_top = -70.0
+offset_right = 140.0
+offset_bottom = 186.0
+theme_override_constants/separation = 0
+script = null
+
+[node name="blue_key" type="TextureRect" parent="items"]
+visible = false
+modulate = Color(0.156863, 0.8, 0.87451, 1)
+offset_right = 232.0
+offset_bottom = 64.0
+texture = ExtResource( "2_32umw" )
+script = null
+
+[node name="purple_key" type="TextureRect" parent="items"]
+visible = false
+modulate = Color(0.556863, 0.278431, 0.54902, 1)
+offset_top = 64.0
+offset_right = 232.0
+offset_bottom = 128.0
+texture = ExtResource( "2_32umw" )
+script = null
+
+[node name="yellow_key" type="TextureRect" parent="items"]
+visible = false
+modulate = Color(0.956863, 0.705882, 0.105882, 1)
+offset_top = 128.0
+offset_right = 232.0
+offset_bottom = 192.0
+texture = ExtResource( "2_32umw" )
+script = null
+
+[node name="red_key" type="TextureRect" parent="items"]
+visible = false
+modulate = Color(0.901961, 0.282353, 0.180392, 1)
+offset_top = 192.0
+offset_right = 232.0
+offset_bottom = 256.0
+texture = ExtResource( "2_32umw" )
+script = null
