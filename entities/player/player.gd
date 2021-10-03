@@ -35,6 +35,7 @@ var _in_pause = false
 var _item
 var _has_item = false
 var _play_plate_sound = true
+var _play_plate_off_sound = false
 var _can_open_yellow = false
 var _can_open_red = false
 
@@ -154,8 +155,12 @@ func _physics_process(delta: float) -> void:
 					$pour.play()
 					if (_beaker_order.size() == 4):
 						if (_beaker_order[0] != 1 || _beaker_order[1] != 2 || _beaker_order[2] != 3 || _beaker_order[3] != 4):
+							$head/camera.add_trauma(0.75)
+							$head/camera.shake()
+							$potion_fail.play()
 							respawn()
 						else:
+							$potion_win.play()
 							_can_pick_up_beakers = false
 							$main.visible = false
 							_can_open_red = true
@@ -223,9 +228,13 @@ func _physics_process(delta: float) -> void:
 					$failed_unlock.play()
 
 				if _locks_unlocked.size() == 4:
+					$head/camera.add_trauma(0.75)
+					$head/camera.shake()
 					locks_open.emit()
 
 			if _ray_cast.get_collider().get_name() == "key":
+				$head/camera.add_trauma(0.5)
+				$head/camera.shake()
 				$key_pickup.play()
 				obj.queue_free()
 				keys_collected += 1
@@ -268,11 +277,15 @@ func _on_pressure_plate_all_placed() -> void:
 	if _has_item:
 		_can_open_yellow = false
 		_play_plate_sound = true
+		if _play_plate_off_sound:
+			$place_off.play()
+			_play_plate_off_sound = false
 		return
 	_can_open_yellow = true
 	if _play_plate_sound:
 		$plate.play()
 		_play_plate_sound = false
+	_play_plate_off_sound = true
 
 
 func _on_pause_menu_resume() -> void:

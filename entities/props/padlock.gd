@@ -2,10 +2,10 @@ extends Node3D
 
 @export_enum("none,blue,purple,yellow,red") var colour
 
-var _blue = Color("#28CCDF")
-var _purple = Color("#8E478C")
+var _blue = Color("#0024ff")
+var _purple = Color("#2400c7")
 var _yellow = Color("#F4B41B")
-var _red = Color("#E6482E")
+var _red = Color("#e60006")
 
 func _ready() -> void:
 	var mat  = $Cube.get_surface_override_material(0).duplicate()

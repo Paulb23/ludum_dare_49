@@ -91,18 +91,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="window_mode" type="OptionButton" parent="graphics"]
+offset_right = 194.0
+offset_bottom = 34.0
+theme = ExtResource( "2_k636x" )
+text = "Windowed"
+items = ["Windowed", null, false, 0, null, "Fullscreen", null, false, 1, null]
+selected = 0
+script = null
+
 [node name="fov_label" type="Label" parent="graphics"]
-offset_right = 106.0
-offset_bottom = 29.0
+offset_top = 59.0
+offset_right = 194.0
+offset_bottom = 82.0
 theme = ExtResource( "2_k636x" )
 text = "FOV"
 structured_text_bidi_override_options = []
 script = null
 
 [node name="fov" type="HScrollBar" parent="graphics"]
-offset_top = 54.0
-offset_right = 80.0
-offset_bottom = 83.0
+offset_top = 107.0
+offset_right = 194.0
+offset_bottom = 119.0
 theme = ExtResource( "2_k636x" )
 min_value = 1.0
 max_value = 180.0
@@ -111,9 +121,9 @@ value = 1.0
 script = null
 
 [node name="back" type="Button" parent="graphics"]
-offset_top = 108.0
-offset_right = 85.0
-offset_bottom = 142.0
+offset_top = 144.0
+offset_right = 194.0
+offset_bottom = 178.0
 theme = ExtResource( "2_k636x" )
 text = "Back
 "
@@ -241,6 +251,7 @@ __meta__ = {
 [connection signal="pressed" from="VBoxContainer/controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="VBoxContainer/audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="item_selected" from="graphics/window_mode" to="graphics" method="_on_window_mode_item_selected"]
 [connection signal="value_changed" from="graphics/fov" to="graphics" method="_on_fov_value_changed"]
 [connection signal="pressed" from="graphics/back" to="." method="pre_show"]
 [connection signal="toggled" from="controls/invery_y" to="controls" method="_on_invery_y_toggled"]

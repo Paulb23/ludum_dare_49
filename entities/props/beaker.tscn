@@ -9,6 +9,9 @@ size = Vector3(1, 1.5, 1)
 [node name="beaker" instance=ExtResource( "1_wc3dc" )]
 script = ExtResource( "2_u8rf5" )
 
+[node name="Cylinder" parent="." index="0"]
+gi_mode = 0
+
 [node name="Area3D" type="Area3D" parent="." index="1"]
 collision_layer = 2
 script = null

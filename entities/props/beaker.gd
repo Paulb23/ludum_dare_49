@@ -3,10 +3,10 @@ extends Node3D
 @export_enum("none,blue,purple,yellow,red") var colour
 
 var _grey = Color(0.35926750302315, 0.36328125, 0.36027094721794)
-var _blue = Color("#28CCDF")
-var _purple = Color("#8E478C")
+var _blue = Color("#0024ff")
+var _purple = Color("#2400c7")
 var _yellow = Color("#F4B41B")
-var _red = Color("#E6482E")
+var _red = Color("#e60006")
 
 func _ready() -> void:
 	set_up_colour()

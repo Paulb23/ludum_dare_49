@@ -29,9 +29,17 @@ sky = SubResource( "Sky_hqgbp" )
 tonemap_mode = 2
 auto_exposure_enabled = true
 ssao_enabled = true
+sdfgi_enabled = true
 sdfgi_use_occlusion = true
+sdfgi_min_cell_size = 0.5
+sdfgi_cascade0_distance = 32.0
+sdfgi_max_distance = 2048.0
+sdfgi_energy = 2.0
 glow_enabled = true
+glow_levels/5 = 3.88
+glow_intensity = 0.25
 volumetric_fog_enabled = true
+volumetric_fog_gi_inject = 1.0
 
 [sub_resource type="CameraEffects" id="CameraEffects_puimg"]
 override_exposure = 0.0
@@ -307,10 +315,10 @@ transform = Transform3D(0.851965, 0, -0.523599, 0, 1, 0, 0.523599, 0, 0.851965, 
 transform = Transform3D(0.837909, 0, -0.545809, 0, 1, 0, 0.545809, 0, 0.837909, 40.9422, 4.2476, 29.4046)
 
 [node name="torch32" parent="lights" instance=ExtResource( "4_ddr6v" )]
-transform = Transform3D(0.837909, 0, -0.545809, 0, 1, 0, 0.545809, 0, 0.837909, 49.4494, 4.2476, 34.2937)
+transform = Transform3D(0.837909, 0, -0.545809, 0, 1, 0, 0.545809, 0, 0.837909, 48.4351, 4.2476, 33.64)
 
 [node name="torch33" parent="lights" instance=ExtResource( "4_ddr6v" )]
-transform = Transform3D(-0.818059, 0, 0.575133, 0, 1, 0, -0.575133, 0, -0.818059, 57.2104, 4.23826, 25.5013)
+transform = Transform3D(-0.818059, 0, 0.575133, 0, 1, 0, -0.575133, 0, -0.818059, 55.574, 4.23826, 24.8093)
 
 [node name="torch35" parent="lights" instance=ExtResource( "4_ddr6v" )]
 transform = Transform3D(0.400348, 0, 0.916363, 0, 1, 0, -0.916363, 0, 0.400348, 55.8424, 4.04034, 31.4326)

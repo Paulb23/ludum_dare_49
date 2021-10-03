@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk6y18dtwimxd"]
+[gd_scene load_steps=7 format=3 uid="uid://dk6y18dtwimxd"]
 
 [ext_resource type="PackedScene" uid="uid://bknsbndh6ydyp" path="res://entities/props/torch.glb" id="1_xylyv"]
 [ext_resource type="Material" uid="uid://dm20e4xer26hs" path="res://base_material.tres" id="2_2heyx"]
+[ext_resource type="Script" path="res://entities/props/torch.gd" id="2_7q8i2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk3mi"]
+albedo_color = Color(0.0313726, 0.0313726, 0.0313726, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4fgql"]
+material = SubResource( "StandardMaterial3D_lk3mi" )
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Gradient" id="Gradient_7b8om"]
+offsets = PackedFloat32Array(0, 0.100478, 0.430622, 0.904306, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.266667, 0, 0, 1, 1, 0, 0, 1, 0.260504, 0, 0, 1, 0, 0, 0, 1)
 
 [node name="torch" instance=ExtResource( "1_xylyv" )]
+script = ExtResource( "2_7q8i2" )
 
 [node name="Cone" parent="." index="0"]
 surface_material_override/0 = ExtResource( "2_2heyx" )
@@ -14,4 +27,31 @@ surface_material_override/0 = ExtResource( "2_2heyx" )
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0170947, 1.40888, -0.65258)
 light_color = Color(1, 0.803922, 0.27451, 1)
+script = null
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11344, 0)
+amount = 15
+lifetime = 1.2
+speed_scale = 0.5
+randomness = 0.3
+lifetime_randomness = 0.3
+mesh = SubResource( "BoxMesh_4fgql" )
+emission_shape = 5
+emission_ring_axis = Vector3(0, 0, 0.2)
+emission_ring_height = 0.2
+emission_ring_radius = 0.2
+emission_ring_inner_radius = 0.0
+direction = Vector3(-1, 1, 0)
+gravity = Vector3(0, 1, 0)
+angular_velocity_min = -42.91
+angular_velocity_max = 25.74
+linear_accel_min = -34.77
+linear_accel_max = 19.1
+tangential_accel_min = -43.64
+tangential_accel_max = 19.75
+angle_min = -317.7
+angle_max = 168.0
+color = Color(1, 0, 0.0509804, 1)
+color_ramp = SubResource( "Gradient_7b8om" )
 script = null

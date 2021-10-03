@@ -1,9 +1,9 @@
 extends Node3D
 
-var _blue = Color("#28CCDF")
-var _purple = Color("#8E478C")
+var _blue = Color("#0024ff")
+var _purple = Color("#2400c7")
 var _yellow = Color("#F4B41B")
-var _red = Color("#E6482E")
+var _red = Color("#e60006")
 
 @export_enum("none,blue,purple,yellow,red") var key_colour
 

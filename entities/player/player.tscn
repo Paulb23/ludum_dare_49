@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://bgm8cbwopc0md"]
+[gd_scene load_steps=26 format=3 uid="uid://bgm8cbwopc0md"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_ig6fk"]
 [ext_resource type="Texture2D" uid="uid://dbtnfqqpl5gwk" path="res://ui/blue_key.png" id="2_32umw"]
 [ext_resource type="PackedScene" uid="uid://djxqho1x43eeu" path="res://entities/props/beaker.tscn" id="2_hesrv"]
+[ext_resource type="Script" path="res://entities/player/camera.gd" id="2_sdxud"]
 [ext_resource type="Script" path="res://entities/player/pause_menu.gd" id="4_dt678"]
 [ext_resource type="PackedScene" uid="uid://cogq2ulbjbe5p" path="res://ui/settings.tscn" id="4_o3b5x"]
 [ext_resource type="Theme" uid="uid://btinitn5u8gd1" path="res://ui/ui_theme.tres" id="5_0jko2"]
@@ -18,6 +19,9 @@
 [ext_resource type="AudioStream" uid="uid://civdh1f42gyrg" path="res://audio/foot_2.wav" id="16_grd1c"]
 [ext_resource type="AudioStream" uid="uid://23q18foktffa" path="res://audio/foot_4.wav" id="17_rw8ya"]
 [ext_resource type="AudioStream" uid="uid://dkbh4svm4lnqi" path="res://audio/hit_1.wav" id="18_5is8q"]
+[ext_resource type="AudioStream" uid="uid://vfuberaeos2n" path="res://audio/plate_off.wav" id="20_uonko"]
+[ext_resource type="AudioStream" uid="uid://ocnob1qpq7xf" path="res://audio/potion_win.wav" id="21_po016"]
+[ext_resource type="AudioStream" uid="uid://bylxwscf33h8i" path="res://audio/potion_fail.wav" id="22_jwogy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dwamd"]
 
@@ -46,7 +50,7 @@ script = null
 
 [node name="camera" type="Camera3D" parent="head"]
 current = true
-script = null
+script = ExtResource( "2_sdxud" )
 
 [node name="RayCast3D" type="RayCast3D" parent="head"]
 target_position = Vector3(0, 0, -6)
@@ -328,6 +332,21 @@ script = SubResource( "GDScript_crek2" )
 
 [node name="plate" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( "18_5is8q" )
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="place_off" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "20_uonko" )
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="potion_win" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "21_po016" )
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="potion_fail" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "22_jwogy" )
 bus = &"sfx"
 script = SubResource( "GDScript_crek2" )
 

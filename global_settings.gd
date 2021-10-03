@@ -1,7 +1,13 @@
 extends Node
 
+enum window_mode {
+	windowed = 0,
+	fullscreen = 1
+}
+
 var _dirty = false
 var settings := {
+	"graphics/window_mode": 0,
 	"graphics/fov": 75,
 
 	"controls/invert_y": false,
@@ -21,6 +27,8 @@ func set_setting(seting, value):
 	_dirty = true
 	if seting == "audio/music_vol" || seting == "audio/sfx_vol":
 		_update_audio_settings()
+	if (seting == "graphics/window_mode"):
+		_update_window_settings()
 
 func _ready() -> void:
 	var config = ConfigFile.new()
@@ -28,6 +36,7 @@ func _ready() -> void:
 	if err == OK:
 		merge_dir(settings, config.get_value("settings", "user", {}))
 	_update_audio_settings()
+	_update_window_settings()
 
 func merge_dir(target, patch):
 	for key in patch:
@@ -44,3 +53,16 @@ func save():
 func _update_audio_settings():
 	AudioServer.set_bus_volume_db(abs(AudioServer.get_bus_index("music")), settings["audio/music_vol"])
 	AudioServer.set_bus_volume_db(abs(AudioServer.get_bus_index("sfx")), settings["audio/sfx_vol"])
+
+func _update_window_settings():
+	var value = settings["graphics/window_mode"]
+	var windows = DisplayServer.get_window_list()
+
+	if value == 0:
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		return
+
+	if value == 1:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		return
