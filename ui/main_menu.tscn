@@ -1,13 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://djxxj8kqswirm"]
+[gd_scene load_steps=5 format=3 uid="uid://djxxj8kqswirm"]
 
 [ext_resource type="Theme" uid="uid://btinitn5u8gd1" path="res://ui/ui_theme.tres" id="1_8pm6d"]
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_ex6cj"]
+[ext_resource type="Texture2D" uid="uid://bin3bksu8w65q" path="res://ui/main_menu.png" id="2_gdljm"]
 [ext_resource type="PackedScene" uid="uid://cogq2ulbjbe5p" path="res://ui/settings.tscn" id="3_8k5d1"]
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( "1_ex6cj" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( "2_gdljm" )
+expand = true
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,6 +84,42 @@ offset_left = -216.5
 offset_top = -26.0
 offset_right = 216.5
 text = "A Game Made in 48 hours for Ludum Dare 49 By Paulb23"
+structured_text_bidi_override_options = []
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.5
+offset_right = 169.5
+offset_bottom = 142.0
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+offset_right = 339.0
+offset_bottom = 69.0
+theme = ExtResource( "1_8pm6d" )
+theme_override_font_sizes/font_size = 56
+text = "Unstable"
+structured_text_bidi_override_options = []
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="VBoxContainer2"]
+offset_top = 73.0
+offset_right = 339.0
+offset_bottom = 142.0
+theme = ExtResource( "1_8pm6d" )
+theme_override_font_sizes/font_size = 56
+text = "  Escape"
 structured_text_bidi_override_options = []
 script = null
 __meta__ = {

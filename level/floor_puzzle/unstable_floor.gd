@@ -38,6 +38,7 @@ func _on_area_body_entered(body : Node3D) -> void:
 	if unstable and body.name == "player":
 		$break.play()
 		_falling = true
+		body.global_transform.origin = body.global_transform.origin.lerp(global_transform.origin, 0.3)
 
 func _physics_process(delta: float) -> void:
 	if not _falling:

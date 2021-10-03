@@ -10,7 +10,7 @@ const _run_speed := 10
 
 var _jump_force := 30
 var _next_is_jump := -1
-var _gravity := 5
+var _gravity := 15
 
 @onready var _mouse_pivot := $head
 @onready var _beaker := $head/hand/beaker
@@ -83,8 +83,9 @@ func _physics_process(delta: float) -> void:
 
 	# jump
 	if Input.is_action_pressed("jump") and is_on_floor():
-		motion_velocity.y = _jump_force
-		_next_is_jump += 1
+		#motion_velocity.y = _jump_force
+		#_next_is_jump += 1
+		pass
 	elif _next_is_jump != -1:
 		motion_velocity.y += _jump_force
 		_next_is_jump += 1

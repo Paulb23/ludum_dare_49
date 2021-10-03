@@ -106,12 +106,12 @@ unstable = true
 
 [node name="unstable_floor2" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 24.3982)
-type = 0
+type = 2
 unstable = true
 
 [node name="unstable_floor3" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 24.3982)
-type = 0
+type = 3
 unstable = true
 
 [node name="unstable_floor4" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
@@ -120,27 +120,27 @@ type = 1
 
 [node name="unstable_floor5" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 24.3982)
-type = 0
+type = 4
 unstable = true
 
 [node name="unstable_floor6" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 24.3982)
-type = 0
+type = 2
 unstable = true
 
 [node name="unstable_floor7" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 28.4668)
-type = 0
+type = 3
 unstable = true
 
 [node name="unstable_floor8" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 28.4668)
-type = 0
+type = 1
 unstable = true
 
 [node name="unstable_floor9" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 28.4668)
-type = 0
+type = 1
 unstable = true
 
 [node name="unstable_floor10" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
@@ -157,27 +157,27 @@ type = 2
 
 [node name="unstable_floor13" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 32.5531)
-type = 0
+type = 1
 unstable = true
 
 [node name="unstable_floor14" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 32.5531)
-type = 0
+type = 4
 unstable = true
 
 [node name="unstable_floor15" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 32.5531)
-type = 0
+type = 2
 unstable = true
 
 [node name="unstable_floor16" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 32.5531)
-type = 0
+type = 3
 unstable = true
 
 [node name="unstable_floor17" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 32.5531)
-type = 0
+type = 4
 unstable = true
 
 [node name="unstable_floor18" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
@@ -190,12 +190,12 @@ type = 1
 
 [node name="unstable_floor20" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91664, -0.958716, 36.6216)
-type = 0
+type = 4
 unstable = true
 
 [node name="unstable_floor21" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 36.6216)
-type = 0
+type = 3
 unstable = true
 
 [node name="unstable_floor22" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
@@ -220,27 +220,27 @@ type = 3
 
 [node name="unstable_floor27" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 40.5198)
-type = 0
+type = 3
 unstable = true
 
 [node name="unstable_floor28" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 40.5198)
-type = 0
+type = 4
 unstable = true
 
 [node name="unstable_floor29" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 40.5198)
-type = 0
+type = 1
 unstable = true
 
 [node name="unstable_floor30" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 40.5198)
-type = 0
+type = 3
 unstable = true
 
 [node name="unstable_floor31" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.89881, -0.958716, 44.5884)
-type = 0
+type = 2
 unstable = true
 
 [node name="unstable_floor32" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
@@ -249,22 +249,22 @@ type = 1
 
 [node name="unstable_floor33" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.975, -0.958716, 44.5884)
-type = 0
+type = 4
 unstable = true
 
 [node name="unstable_floor34" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.16393, -0.958716, 44.5884)
-type = 0
+type = 3
 unstable = true
 
 [node name="unstable_floor35" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.18892, -0.958716, 44.5884)
-type = 0
+type = 1
 unstable = true
 
 [node name="unstable_floor36" parent="floor_trap" instance=ExtResource( "2_8fdva" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.2007, -0.958716, 44.5884)
-type = 0
+type = 2
 unstable = true
 
 [node name="lights" type="Node3D" parent="."]
@@ -620,6 +620,54 @@ script = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1107, 2.54346, -17.789)
 shape = SubResource( "BoxShape3D_okdxs" )
 script = null
+
+[node name="unstable_floor" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, -1, 4.37114e-08, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -13.2108, 3.21069, 24.4385)
+type = 1
+
+[node name="unstable_floor3" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, -1, 4.37114e-08, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -13.2108, 3.21069, 28.4611)
+type = 2
+
+[node name="unstable_floor4" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, -1, 4.37114e-08, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -13.2108, 3.21069, 32.5151)
+type = 3
+
+[node name="unstable_floor5" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, -1, 4.37114e-08, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -13.2108, 3.21069, 36.5718)
+type = 2
+
+[node name="unstable_floor6" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, -1, 4.37114e-08, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -13.2108, 3.21069, 40.591)
+type = 3
+
+[node name="unstable_floor7" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, -1, 4.37114e-08, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -13.2108, 3.21069, 44.6041)
+type = 1
+
+[node name="unstable_floor2" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 12.905, 3.21069, 24.4385)
+type = 2
+
+[node name="unstable_floor8" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 12.905, 3.21069, 28.4773)
+type = 1
+
+[node name="unstable_floor9" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 12.905, 3.21069, 32.534)
+type = 1
+
+[node name="unstable_floor10" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 12.905, 3.21069, 36.5907)
+type = 1
+
+[node name="unstable_floor11" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 12.905, 3.21069, 40.6756)
+type = 3
+
+[node name="unstable_floor12" parent="." instance=ExtResource( "2_8fdva" )]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 12.905, 3.21069, 44.7205)
+type = 1
 
 [connection signal="beakers_passed" from="player" to="." method="_on_player_beakers_passed"]
 [connection signal="key_collected" from="player" to="." method="_on_player_key_collected"]

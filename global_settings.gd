@@ -1,4 +1,4 @@
-extends Button
+extends Node
 
 var _dirty = false
 var settings := {

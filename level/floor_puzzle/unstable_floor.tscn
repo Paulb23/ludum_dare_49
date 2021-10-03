@@ -10,7 +10,7 @@ size = Vector3(4, 2, 4)
 size = Vector3(4, 2, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ddwd0"]
-size = Vector3(4, 1, 4)
+size = Vector3(2.75, 1, 2.75)
 
 [node name="unstable_floor" type="StaticBody3D" groups=["level_1"]]
 script = ExtResource( "1_784bo" )

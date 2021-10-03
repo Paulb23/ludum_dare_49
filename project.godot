@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Ludum Dare 49"
+config/name="Unstable Escape"
 run/main_scene="res://level/main_level.tscn"
 config/icon="res://icon.png"
 
@@ -18,6 +18,10 @@ config/icon="res://icon.png"
 
 GlobalSettings="*res://global_settings.gd"
 AudioManager="*res://audio/AudioManager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 
