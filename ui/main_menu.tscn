@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://djxxj8kqswirm"]
+
+[ext_resource type="Theme" uid="uid://btinitn5u8gd1" path="res://ui/ui_theme.tres" id="1_8pm6d"]
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_ex6cj"]
+[ext_resource type="PackedScene" uid="uid://cogq2ulbjbe5p" path="res://ui/settings.tscn" id="3_8k5d1"]
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( "1_ex6cj" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.019
+anchor_top = 0.5
+anchor_right = 0.019
+anchor_bottom = 0.5
+offset_top = -47.5
+offset_right = 73.0
+offset_bottom = 47.5
+theme_override_constants/separation = 25
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="VBoxContainer"]
+offset_right = 153.0
+offset_bottom = 34.0
+theme = ExtResource( "1_8pm6d" )
+text = "Play"
+flat = true
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings" type="Button" parent="VBoxContainer"]
+offset_top = 59.0
+offset_right = 153.0
+offset_bottom = 93.0
+theme = ExtResource( "1_8pm6d" )
+text = "Settings"
+flat = true
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+offset_top = 118.0
+offset_right = 153.0
+offset_bottom = 152.0
+theme = ExtResource( "1_8pm6d" )
+text = "Exit"
+flat = true
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings" parent="." instance=ExtResource( "3_8k5d1" )]
+visible = false
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.935
+anchor_right = 0.5
+anchor_bottom = 0.956
+offset_left = -216.5
+offset_top = -26.0
+offset_right = 216.5
+text = "A Game Made in 48 hours for Ludum Dare 49 By Paulb23"
+structured_text_bidi_override_options = []
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="back" from="settings" to="." method="_on_settings_back"]

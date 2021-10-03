@@ -36,6 +36,7 @@ func reset_puzzle():
 
 func _on_area_body_entered(body : Node3D) -> void:
 	if unstable and body.name == "player":
+		$break.play()
 		_falling = true
 
 func _physics_process(delta: float) -> void:

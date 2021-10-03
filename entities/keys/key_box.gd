@@ -5,8 +5,10 @@ extends Node3D
 @onready var animation = $AnimationPlayer
 
 func open():
+	$keybox.queue_free()
 	animation.play("open")
 
 func _on_AnimationPlayer_animation_finished(anim_name: StringName) -> void:
-	$keybox.input_ray_pickable = false
-	$keybox.queue_free()
+	#$keybox.input_ray_pickable = false
+	#$keybox.queue_free()
+	pass

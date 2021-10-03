@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func open():
 	opening = true
+	$open.play()
 
 func _physics_process(delta: float) -> void:
 	if not opening:

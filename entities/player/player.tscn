@@ -1,12 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgm8cbwopc0md"]
+[gd_scene load_steps=21 format=3 uid="uid://bgm8cbwopc0md"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_ig6fk"]
 [ext_resource type="Texture2D" uid="uid://dbtnfqqpl5gwk" path="res://ui/blue_key.png" id="2_32umw"]
 [ext_resource type="PackedScene" uid="uid://djxqho1x43eeu" path="res://entities/props/beaker.tscn" id="2_hesrv"]
+[ext_resource type="Script" path="res://entities/player/pause_menu.gd" id="4_dt678"]
+[ext_resource type="PackedScene" uid="uid://cogq2ulbjbe5p" path="res://ui/settings.tscn" id="4_o3b5x"]
+[ext_resource type="Theme" uid="uid://btinitn5u8gd1" path="res://ui/ui_theme.tres" id="5_0jko2"]
+[ext_resource type="AudioStream" uid="uid://7r4gerv14645" path="res://audio/beaker_pickup.wav" id="7_luwaq"]
+[ext_resource type="AudioStream" uid="uid://dfiw6rm7pae0u" path="res://audio/glass_drop.wav" id="8_a0vwi"]
+[ext_resource type="AudioStream" uid="uid://bdy0qt5w85h3e" path="res://audio/pour.wav" id="9_fguqk"]
+[ext_resource type="AudioStream" uid="uid://cuskdxsggscek" path="res://audio/key_pickup.wav" id="10_y0a0c"]
+[ext_resource type="AudioStream" uid="uid://c6iyxiw82m7ms" path="res://audio/box_open.wav" id="11_hikp7"]
+[ext_resource type="AudioStream" uid="uid://cvo1143tb7hn1" path="res://audio/failed_unlock.wav" id="12_pmf8m"]
+[ext_resource type="AudioStream" uid="uid://ye42hivos0sf" path="res://audio/unlock.wav" id="13_tegtd"]
+[ext_resource type="AudioStream" uid="uid://d0a3lnuvqfoap" path="res://audio/platform_break.wav" id="14_b0nba"]
+[ext_resource type="AudioStream" uid="uid://cpr7jldaokp73" path="res://audio/foot_1.wav" id="15_s2if7"]
+[ext_resource type="AudioStream" uid="uid://civdh1f42gyrg" path="res://audio/foot_2.wav" id="16_grd1c"]
+[ext_resource type="AudioStream" uid="uid://23q18foktffa" path="res://audio/foot_4.wav" id="17_rw8ya"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dwamd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cccs3"]
+
+[sub_resource type="GDScript" id="GDScript_crek2"]
+script/source = "extends AudioStreamPlayer3D
+
+"
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource( "1_ig6fk" )
@@ -43,6 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32651, 0, 0)
 visible = false
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -60,6 +80,7 @@ __meta__ = {
 }
 
 [node name="drop" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -77,6 +98,7 @@ __meta__ = {
 }
 
 [node name="pickup" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -94,6 +116,7 @@ __meta__ = {
 }
 
 [node name="main" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -156,3 +179,161 @@ offset_right = 232.0
 offset_bottom = 256.0
 texture = ExtResource( "2_32umw" )
 script = null
+
+[node name="pause_menu" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.018
+anchor_top = 0.5
+anchor_right = 0.018
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+script = ExtResource( "4_dt678" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="Control" parent="pause_menu"]
+offset_right = 40.0
+script = null
+
+[node name="menu" type="Button" parent="pause_menu/buttons"]
+offset_left = -16.0
+offset_top = -10.0
+offset_right = 113.0
+offset_bottom = 24.0
+theme = ExtResource( "5_0jko2" )
+text = "Menu
+"
+flat = true
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="pause_menu/buttons"]
+offset_top = 41.0
+offset_right = 129.0
+offset_bottom = 75.0
+theme = ExtResource( "5_0jko2" )
+text = "Resume"
+flat = true
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings" type="Button" parent="pause_menu/buttons"]
+offset_top = 95.0
+offset_right = 153.0
+offset_bottom = 129.0
+theme = ExtResource( "5_0jko2" )
+text = "Settings"
+flat = true
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="pause_menu/buttons"]
+offset_top = 149.0
+offset_right = 78.0
+offset_bottom = 183.0
+theme = ExtResource( "5_0jko2" )
+text = "Exit"
+flat = true
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings" parent="pause_menu" instance=ExtResource( "4_o3b5x" )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 4.0
+
+[node name="beaker_pickup" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "7_luwaq" )
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="beaker_drop" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "8_a0vwi" )
+unit_db = -20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="pour" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "9_fguqk" )
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="key_pickup" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "10_y0a0c" )
+unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="box_open" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "11_hikp7" )
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="failed_unlock" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "12_pmf8m" )
+unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="unlock" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "13_tegtd" )
+unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="break" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "14_b0nba" )
+unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="walk_1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "15_s2if7" )
+unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="walk_2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "16_grd1c" )
+unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="walk_3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "17_rw8ya" )
+unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="walk_4" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "15_s2if7" )
+unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+script = null
+
+[connection signal="resume" from="pause_menu" to="." method="_on_pause_menu_resume"]
+[connection signal="pressed" from="pause_menu/buttons/menu" to="pause_menu" method="_on_menu_pressed"]
+[connection signal="pressed" from="pause_menu/buttons/play" to="pause_menu" method="_on_play_pressed"]
+[connection signal="pressed" from="pause_menu/buttons/settings" to="pause_menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="pause_menu/buttons/exit" to="pause_menu" method="_on_exit_pressed"]
+[connection signal="back" from="pause_menu/settings" to="pause_menu" method="_on_settings_back"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

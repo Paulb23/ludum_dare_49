@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://mks54pq1qu44"]
+
+[ext_resource type="Theme" uid="uid://btinitn5u8gd1" path="res://ui/ui_theme.tres" id="1_53vd7"]
+[ext_resource type="Script" path="res://ui/credits.gd" id="1_qrrao"]
+
+[node name="credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( "1_qrrao" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -50.0
+offset_right = 221.0
+offset_bottom = 50.0
+theme = ExtResource( "1_53vd7" )
+theme_override_constants/separation = 24
+alignment = 1
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+offset_right = 442.0
+offset_bottom = 38.0
+theme = ExtResource( "1_53vd7" )
+theme_override_font_sizes/font_size = 30
+text = "         You escaped!"
+structured_text_bidi_override_options = []
+script = null
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+offset_top = 62.0
+offset_right = 442.0
+offset_bottom = 100.0
+theme = ExtResource( "1_53vd7" )
+theme_override_font_sizes/font_size = 30
+text = "Thank you for Playing"
+structured_text_bidi_override_options = []
+script = null
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+script = null
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.935
+anchor_right = 0.5
+anchor_bottom = 0.956
+offset_left = -216.5
+offset_top = -26.0
+offset_right = 216.5
+text = "A Game Made in 48 hours for Ludum Dare 49 By Paulb23"
+structured_text_bidi_override_options = []
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

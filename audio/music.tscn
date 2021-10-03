@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://mqsl4gno21nv"]
+
+[ext_resource type="AudioStream" uid="uid://qai4mua82fv6" path="res://audio/main_theme.ogg" id="1_h2k5t"]
+[ext_resource type="AudioStream" uid="uid://coq36b5vxqcvp" path="res://audio/button_hover.wav" id="2_ys6df"]
+[ext_resource type="AudioStream" uid="uid://bcdyt4uwnmf5q" path="res://audio/button_click.wav" id="3_jedyf"]
+
+[node name="music" type="Node3D"]
+script = null
+
+[node name="main_theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "1_h2k5t" )
+volume_db = -15.0
+autoplay = true
+bus = &"music"
+script = null
+
+[node name="button_hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "2_ys6df" )
+max_polyphony = 2
+bus = &"sfx"
+script = null
+
+[node name="button_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "3_jedyf" )
+volume_db = -10.0
+bus = &"sfx"
+script = null

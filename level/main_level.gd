@@ -32,4 +32,4 @@ func _on_player_locks_open() -> void:
 
 func _on_Area3D_final_body_entered(body: Node3D) -> void:
 	if body.name == "player":
-		$player.respawn()
+		get_tree().change_scene("res://ui/credits.tscn")

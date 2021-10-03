@@ -29,12 +29,6 @@ Traped in a abandoned Mines which are now unstable.
 				- stacking - todo
 		- Ones all key are collected raced for the exit
 
-		TODO:
-			- Sfx
-			- Music
-			- Menus
-			- Polish
-
 Unstable Factory assembly lines:
 	- Endless repair game, start of fixing one thing, slowly upgrade to manage multiple things
 		- Plot twist when you fail at the end, the factory collapses and a timer starts to escape.
