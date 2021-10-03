@@ -2,6 +2,8 @@ extends Node
 
 var _dirty = false
 var settings := {
+	"graphics/fov": 75,
+
 	"controls/invert_y": false,
 	"controls/mouse_sensitvity": 50,
 
@@ -19,7 +21,6 @@ func set_setting(seting, value):
 	_dirty = true
 	if seting == "audio/music_vol" || seting == "audio/sfx_vol":
 		_update_audio_settings()
-
 
 func _ready() -> void:
 	var config = ConfigFile.new()

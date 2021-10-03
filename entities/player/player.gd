@@ -16,6 +16,7 @@ var _gravity := 15
 @onready var _beaker := $head/hand/beaker
 var _min_look_angle := -50.0
 var _max_look_angle := 75.0
+var _fov := 75.0
 
 var _mouse_sensitivity := 50
 var _invert_y_axsis := false
@@ -52,6 +53,8 @@ func _ready() -> void:
 func _load_settings():
 	_invert_y_axsis = GlobalSettings.get_setting("controls/invert_y")
 	_mouse_sensitivity = GlobalSettings.get_setting("controls/mouse_sensitvity")
+	_fov = GlobalSettings.get_setting("graphics/fov")
+	$head/camera.fov = _fov
 
 func _physics_process(delta: float) -> void:
 	if _in_pause:
