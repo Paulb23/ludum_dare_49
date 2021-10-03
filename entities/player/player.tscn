@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bgm8cbwopc0md"]
+[gd_scene load_steps=22 format=3 uid="uid://bgm8cbwopc0md"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_ig6fk"]
 [ext_resource type="Texture2D" uid="uid://dbtnfqqpl5gwk" path="res://ui/blue_key.png" id="2_32umw"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://cpr7jldaokp73" path="res://audio/foot_1.wav" id="15_s2if7"]
 [ext_resource type="AudioStream" uid="uid://civdh1f42gyrg" path="res://audio/foot_2.wav" id="16_grd1c"]
 [ext_resource type="AudioStream" uid="uid://23q18foktffa" path="res://audio/foot_4.wav" id="17_rw8ya"]
+[ext_resource type="AudioStream" uid="uid://dkbh4svm4lnqi" path="res://audio/hit_1.wav" id="18_5is8q"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dwamd"]
 
@@ -322,6 +323,11 @@ script = SubResource( "GDScript_crek2" )
 [node name="walk_4" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( "15_s2if7" )
 unit_db = 20.0
+bus = &"sfx"
+script = SubResource( "GDScript_crek2" )
+
+[node name="plate" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "18_5is8q" )
 bus = &"sfx"
 script = SubResource( "GDScript_crek2" )
 

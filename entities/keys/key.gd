@@ -8,25 +8,25 @@ var _red = Color("#E6482E")
 @export_enum("none,blue,purple,yellow,red") var key_colour
 
 func _ready() -> void:
-	var mat  = $Cube.get_surface_override_material(0).duplicate()
-	$Cube.set_surface_override_material(0, mat)
-
-	mat  = $Torus.get_surface_override_material(0).duplicate()
-	$Torus.set_surface_override_material(0, mat)
+	var cube_mat  = StandardMaterial3D.new()
+	var torus_mat  = StandardMaterial3D.new()
 
 	match key_colour:
 		1:
-			$Cube.get_surface_override_material(0).albedo_color = _blue
-			$Torus.get_surface_override_material(0).albedo_color = _blue
+			cube_mat.albedo_color = _blue
+			torus_mat.albedo_color = _blue
 		2:
-			$Cube.get_surface_override_material(0).albedo_color = _purple
-			$Torus.get_surface_override_material(0).albedo_color = _purple
+			cube_mat.albedo_color = _purple
+			torus_mat.albedo_color = _purple
 		3:
-			$Cube.get_surface_override_material(0).albedo_color = _yellow
-			$Torus.get_surface_override_material(0).albedo_color = _yellow
+			cube_mat.albedo_color = _yellow
+			torus_mat.albedo_color = _yellow
 		4:
-			$Cube.get_surface_override_material(0).albedo_color = _red
-			$Torus.get_surface_override_material(0).albedo_color = _red
+			cube_mat.albedo_color = _red
+			torus_mat.albedo_color = _red
+
+	$Cube.set_surface_override_material(0, cube_mat)
+	$Torus.set_surface_override_material(0, torus_mat)
 
 func enable():
 	$key/CollisionShape3D.disabled = false

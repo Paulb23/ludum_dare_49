@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cogq2ulbjbe5p"]
+[gd_scene load_steps=7 format=3 uid="uid://cogq2ulbjbe5p"]
 
 [ext_resource type="Script" path="res://ui/settings.gd" id="1_k8m8x"]
 [ext_resource type="Theme" uid="uid://btinitn5u8gd1" path="res://ui/ui_theme.tres" id="2_k636x"]
 [ext_resource type="Script" path="res://global_settings.gd" id="3_lbt6n"]
+[ext_resource type="Script" path="res://ui/graphics.gd" id="4_huqg1"]
 [ext_resource type="Script" path="res://ui/audio_settings.gd" id="4_morpw"]
 [ext_resource type="Script" path="res://ui/controls_settings.gd" id="4_yij2a"]
 
@@ -85,42 +86,7 @@ offset_top = -20.0
 offset_right = 40.0
 offset_bottom = 20.0
 theme_override_constants/separation = 25
-script = null
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="graphics" type="Button" parent="graphics"]
-offset_right = 80.0
-offset_bottom = 29.0
-theme = ExtResource( "2_k636x" )
-text = "Graphics"
-flat = true
-script = null
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="controls" type="Button" parent="graphics"]
-offset_top = 54.0
-offset_right = 80.0
-offset_bottom = 83.0
-theme = ExtResource( "2_k636x" )
-text = "Controls"
-flat = true
-script = null
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="audio" type="Button" parent="graphics"]
-offset_top = 108.0
-offset_right = 80.0
-offset_bottom = 137.0
-theme = ExtResource( "2_k636x" )
-text = "Audio"
-flat = true
-script = null
+script = ExtResource( "4_huqg1" )
 __meta__ = {
 "_edit_use_anchors_": false
 }

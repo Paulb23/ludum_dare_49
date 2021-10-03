@@ -33,6 +33,7 @@ var _in_pause = false
 
 var _item
 var _has_item = false
+var _play_plate_sound = true
 var _can_open_yellow = false
 var _can_open_red = false
 
@@ -263,8 +264,12 @@ func _input(event: InputEvent) -> void:
 func _on_pressure_plate_all_placed() -> void:
 	if _has_item:
 		_can_open_yellow = false
+		_play_plate_sound = true
 		return
 	_can_open_yellow = true
+	if _play_plate_sound:
+		$plate.play()
+		_play_plate_sound = false
 
 
 func _on_pause_menu_resume() -> void:
